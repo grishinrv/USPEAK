@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/QuestionTemplate.css';
 
 export class QuestionTemplate extends Component {
     static displayName = QuestionTemplate.name;
@@ -14,20 +15,17 @@ export class QuestionTemplate extends Component {
 
     static renderQuestionTable(question) {
         return (
-            <table className='table table-striped' aria-labelledby="tabelLabel">
-                <thead>
-                    <tr>
-                        <th>Текс вопроса</th>
-                        <th>Пояснения</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr key={question.id}>
-                        <td>{question.name}</td>
-                        <td>{question.description}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <form class="question-template-main-atr">
+                <label>
+                    Текст вопроса:
+                <input type="text" name="name" defaultValue={question.name} />
+                </label>
+                <label>
+                    Пояснения к заполнению:
+                <input type="text" name="description" defaultValue={question.description} />
+                </label>
+                <input type="submit" value="Сохранить изменения" />
+            </form>
         );
     }
 
