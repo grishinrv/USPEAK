@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/QuestionTemplate.css';
+import EdiText from 'react-editext'
 
 export class QuestionTemplate extends Component {
     static displayName = QuestionTemplate.name;
@@ -13,19 +14,30 @@ export class QuestionTemplate extends Component {
         this.populateQuestionData();
     }
 
+    onSave = val => {
+        console.log('Edited Value -> ', val)
+    }
+
     static renderQuestionTable(question) {
         return (
-            <form class="question-template-main-atr">
+            <div class="question-template-main-atr">
                 <label>
-                    Текст вопроса:
-                <input type="text" name="name" defaultValue={question.name} />
+                    <b>Текст вопроса:</b>
+                    <EdiText
+                        type='text'
+                        value={question.name}
+                        onSave={this.onSave}
+                    />
                 </label>
                 <label>
-                    Пояснения к заполнению:
-                <input type="text" name="description" defaultValue={question.description} />
+                    <b>Пояснения к заполнению:</b>
+                    <EdiText
+                        type='text'
+                        value={question.description}
+                    />
                 </label>
-                <input type="submit" value="Сохранить изменения" />
-            </form>
+                <button className="btn btn-primary" onClick={this.saveClicked}>Сохранить</button>
+            </div>
         );
     }
 
