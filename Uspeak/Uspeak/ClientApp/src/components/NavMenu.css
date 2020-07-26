@@ -6,6 +6,7 @@
 
 html {
   font-size: 14px;
+  font-family: 'Times New Roman'
 }
 @media (min-width: 768px) {
   html {
