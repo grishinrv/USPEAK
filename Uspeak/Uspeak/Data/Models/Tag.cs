@@ -16,6 +16,7 @@ namespace Uspeak.Data.Models
         /// Id Родительской сущности. Часть составного ключа.
         /// </summary>
         public Guid EnityId { get; set; }
+        public Enitity Enitity { get; set; }
         public TagType TagKind { get; set; }
     }
 }
