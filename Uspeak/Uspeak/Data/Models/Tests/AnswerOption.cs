@@ -2,7 +2,7 @@
 
 namespace Uspeak.Data.Models.Tests
 {
-    public class AnswerOption
+    public class AnswerOption : IPersistable
     {
         public Guid Id { get; set; }
         public string Text { get; set; }

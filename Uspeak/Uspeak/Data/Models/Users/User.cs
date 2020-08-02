@@ -2,7 +2,7 @@
 
 namespace Uspeak.Data.Models.Users
 {
-    public class User
+    public class User : IPersistable, INamed
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

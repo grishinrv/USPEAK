@@ -5,7 +5,7 @@ using Uspeak.Domain;
 
 namespace Uspeak.Data.Models.Tests
 {
-    public class QuestionSettings
+    public class QuestionSettings : IViewable, IPersistable
     {
         public Guid Id { get; set; }
         /// <summary>

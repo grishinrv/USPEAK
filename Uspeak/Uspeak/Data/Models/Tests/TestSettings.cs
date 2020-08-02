@@ -5,7 +5,7 @@ using Uspeak.Data.Models.Users;
 
 namespace Uspeak.Data.Models.Tests
 {
-    public class TestSettings
+    public class TestSettings : IViewable, IPersistable
     {
         public Guid  Id { get; set; }
         public string Name { get; set; }
