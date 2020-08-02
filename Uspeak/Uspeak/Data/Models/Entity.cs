@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Uspeak.Data.Models
 {
-    public class Enitity : IPersistable, IViewable
+    public class Entity : IPersistable, IViewable
     {
         public Guid Id { get; set; }
         public EnityType EnityKind { get; set; }
