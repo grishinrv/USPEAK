@@ -6,5 +6,6 @@ namespace Uspeak.Data.Models.Users
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public UserType TypeOfUser { get; set; }
     }
 }
