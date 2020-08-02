@@ -1,6 +1,6 @@
-﻿namespace Uspeak.Domain
+﻿namespace Uspeak.Models.Tests
 {
-    public enum QuestionType
+    public enum QuestionType 
     {
         ChooseRightAnswer = 0,
         DragAndDrop = 1,
