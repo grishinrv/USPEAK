@@ -22,13 +22,11 @@ namespace Uspeak
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
-
             services.AddControllersWithViews();
-            services.AddSingleton<IContextFactory>( x => new ContextFactory(configuration.GetConnectionString("UspeakDatabase")));
+            services.AddSingleton<Infrastructure.IConfigurationProvider>(x => 
+                new Infrastructure.ConfigurationProvider( Configuration));
+            services.AddSingleton<IContextFactory>( x => 
+                new ContextFactory(Configuration.GetConnectionString("UspeakDatabase")));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
