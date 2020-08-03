@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Uspeak.Domain;
+using Uspeak.Models.Tests;
 
 namespace Uspeak.Data.Models.Tests
 {

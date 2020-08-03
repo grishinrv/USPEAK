@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -14,6 +15,7 @@ namespace Uspeak.Persistence
     {
         EntityEntry Entry([NotNull] object entity);
         EntityEntry<TEntity> Entry<TEntity>([NotNull] TEntity entity) where TEntity : class;
+        DatabaseFacade Database { get; }
         DbSet<Course> Courses { get; }
         DbSet<EventInstance> Events { get; }
         DbSet<AnswerOption> AnswerOptions { get; }
