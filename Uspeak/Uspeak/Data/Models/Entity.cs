@@ -18,6 +18,6 @@ namespace Uspeak.Data.Models
         /// <summary>
         /// Список подвешеных тэгов.
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
     }
 }

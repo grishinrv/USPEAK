@@ -13,6 +13,6 @@ namespace Uspeak.Data.Models.Study
         public Group Group { get; set; }
         public LessonState Status { get; set; }
         public string HomeTask { get; set; }
-        public virtual List<LessonStudentPresence> Presences { get; set; }
+        public virtual ICollection<LessonStudentPresence> Presences { get; set; }
     }
 }

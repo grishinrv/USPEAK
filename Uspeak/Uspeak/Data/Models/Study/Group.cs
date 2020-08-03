@@ -12,7 +12,7 @@ namespace Uspeak.Data.Models.Study
         public Course Course { get; set; }
         public Guid MainTeacherId { get; set; }
         public Teacher MainTeacher { get; set; }
-        public virtual List<Student> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
         public string StartLessonUri { get; set; }
     }
 }

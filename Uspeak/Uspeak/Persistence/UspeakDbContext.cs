@@ -19,6 +19,8 @@ namespace Uspeak.Persistence
         { 
             //modelBuilder.Entity<Course>()
             //    .HasKey()
+
+            //modelBuilder.Entity<User>().
         }
 
         public DbSet<Course> Courses { get; set; }
