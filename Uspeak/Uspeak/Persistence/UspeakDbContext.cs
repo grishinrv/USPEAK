@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
 using Uspeak.Data.Models.Tests;
@@ -13,9 +10,8 @@ namespace Uspeak.Persistence
 {
     public class UspeakDbContext : DbContext, IUspeakDbContext
     {
-        public UspeakDbContext()
+        public UspeakDbContext([NotNull] DbContextOptions options) : base(options)
         {
-
         }
 
         public DbSet<Course> Courses { get; set; }
