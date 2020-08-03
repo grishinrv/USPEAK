@@ -29,5 +29,7 @@ namespace Uspeak.Persistence
         public DbSet<Entity> Entities { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
+        
+        public DbSet<Image> Images { get; set; }
     }
 }
