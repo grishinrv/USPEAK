@@ -22,6 +22,8 @@ namespace Uspeak.Data.Models.Infrastructure
         Account_Changed= 102,
         [Description("удалил пользователя")]
         Account_Deleted = 103,
+        [Description("сменил роль пользователя")]
+        Account_RoleChanged = 104,
 
         [Description("открыл")]
         Entity_HasOpened = 200,
