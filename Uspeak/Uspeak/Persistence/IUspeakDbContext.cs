@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
+using Uspeak.Data.Models.Study;
 using Uspeak.Data.Models.Tests;
 using Uspeak.Data.Models.Users;
 
@@ -18,6 +19,9 @@ namespace Uspeak.Persistence
         DatabaseFacade Database { get; }
         DbSet<Course> Courses { get; }
         DbSet<EventInstance> Events { get; }
+        DbSet<Group> Groups { get; }
+        DbSet<Student> Students { get; }
+        DbSet<Teacher> Teachers { get; }
         DbSet<AnswerOption> AnswerOptions { get; }
         DbSet<QuestionSettings> QuestionSettings { get; }
         DbSet<TestSettings> TestSettings { get; }

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
+using Uspeak.Data.Models.Study;
 using Uspeak.Data.Models.Tests;
 using Uspeak.Data.Models.Users;
 
@@ -14,9 +15,21 @@ namespace Uspeak.Persistence
         {
         }
 
+        protected sealed override void OnModelCreating(ModelBuilder modelBuilder)
+        { 
+            //modelBuilder.Entity<Course>()
+            //    .HasKey()
+        }
+
         public DbSet<Course> Courses { get; set; }
 
         public DbSet<EventInstance> Events { get; set; }
+
+        public DbSet<Group> Groups { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+
+        public DbSet<Teacher> Teachers { get; set; }
 
         public DbSet<AnswerOption> AnswerOptions { get; set; }
 

@@ -18,6 +18,6 @@ namespace Uspeak.Data.Models.Tests
         public Guid TestForeignKey { get; set; }
         public TestSettings Test { get; set; }
         public QuestionType QuestionType { get; set; }
-        public List<AnswerOption> Options { get; set; }
+        public virtual List<AnswerOption> Options { get; set; }
     }
 }

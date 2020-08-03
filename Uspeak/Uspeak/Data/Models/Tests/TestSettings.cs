@@ -16,6 +16,6 @@ namespace Uspeak.Data.Models.Tests
         public Course Course { get; set; }
         public Guid AuthorForeignKey { get; set; }
         public User Author { get; set; }
-        public List<QuestionSettings> Questions { get; set; }
+        public virtual List<QuestionSettings> Questions { get; set; }
     }
 }
