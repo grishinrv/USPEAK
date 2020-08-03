@@ -13,5 +13,7 @@ namespace Uspeak.Data.Models.Courses
         public Guid PromoImageId { get; set; }
         public Image PromoImage { get; set; }
         public string CssClassesString { get; set; }
+        public int LessonsQuantity { get; set; }
+        public int LessonDurationMinutes { get; set; }
     }
 }

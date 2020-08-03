@@ -6,7 +6,7 @@ namespace Uspeak.Data.Models
     public class Entity : IPersistable, IViewable
     {
         public Guid Id { get; set; }
-        public EnityType EnityKind { get; set; }
+        public EntityType EnityKind { get; set; }
         /// <summary>
         /// Описание. Дублирует поле основной сущности, для обеспечения полнотекстового поиска и уменьшения кол-ва соединений.
         /// </summary>

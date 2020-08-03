@@ -21,6 +21,8 @@ namespace Uspeak.Persistence
         DbSet<EventInstance> Events { get; }
         DbSet<RuntimeConfiguration> Config { get; }
         DbSet<Group> Groups { get; }
+        DbSet<Lesson> Lessons { get; }
+        DbSet<LessonStudentPresence> Presences { get; }
         DbSet<Student> Students { get; }
         DbSet<Teacher> Teachers { get; }
         DbSet<AnswerOption> AnswerOptions { get; }

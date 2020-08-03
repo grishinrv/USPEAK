@@ -11,6 +11,7 @@ namespace Uspeak.Data.Models.Infrastructure
         public UserEvent Event { get; set; }
         public Guid SubjectId { get; set; }
         public Entity Subject { get; set; }
+        public string SubjectName { get; set; }
         public string Result { get; set; }
         public DateTime Moment { get; set; }
     }

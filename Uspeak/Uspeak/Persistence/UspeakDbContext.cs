@@ -29,6 +29,10 @@ namespace Uspeak.Persistence
 
         public DbSet<Group> Groups { get; set; }
 
+        public DbSet<Lesson> Lessons { get; set; }
+
+        public DbSet<LessonStudentPresence> Presences { get; set; }
+
         public DbSet<Student> Students { get; set; }
 
         public DbSet<Teacher> Teachers { get; set; }
