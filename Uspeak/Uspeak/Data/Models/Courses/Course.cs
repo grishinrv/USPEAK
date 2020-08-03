@@ -10,5 +10,8 @@ namespace Uspeak.Data.Models.Courses
         public string Name { get; set; }
         public string Description { get; set; }
         public List<TestSettings> Tests { get; set; }
+        public Guid PromoImageId { get; set; }
+        public Image PromoImage { get; set; }
+        public string CssClassesString { get; set; }
     }
 }
