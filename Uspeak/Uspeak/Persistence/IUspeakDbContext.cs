@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
+using Uspeak.Data.Models.Infrastructure;
 using Uspeak.Data.Models.Study;
 using Uspeak.Data.Models.Tests;
 using Uspeak.Data.Models.Users;
@@ -19,6 +19,7 @@ namespace Uspeak.Persistence
         DatabaseFacade Database { get; }
         DbSet<Course> Courses { get; }
         DbSet<EventInstance> Events { get; }
+        DbSet<RuntimeConfiguration> Config { get; }
         DbSet<Group> Groups { get; }
         DbSet<Student> Students { get; }
         DbSet<Teacher> Teachers { get; }

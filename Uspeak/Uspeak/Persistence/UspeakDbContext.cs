@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
+using Uspeak.Data.Models.Infrastructure;
 using Uspeak.Data.Models.Study;
 using Uspeak.Data.Models.Tests;
 using Uspeak.Data.Models.Users;
@@ -24,6 +24,8 @@ namespace Uspeak.Persistence
         public DbSet<Course> Courses { get; set; }
 
         public DbSet<EventInstance> Events { get; set; }
+
+        public DbSet<RuntimeConfiguration> Config { get; set; }
 
         public DbSet<Group> Groups { get; set; }
 
