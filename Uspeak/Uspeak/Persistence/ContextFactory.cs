@@ -12,9 +12,6 @@ namespace Uspeak.Persistence
             _optionsBuilder.UseSqlServer(connectionString);
         }
 
-        public IUspeakDbContext Create()
-        {
-            return new UspeakDbContext(_optionsBuilder.Options);
-        }
+        public IUspeakDbContext Create() => new UspeakDbContext(_optionsBuilder.Options);
     }
 }
