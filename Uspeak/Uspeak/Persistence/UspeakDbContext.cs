@@ -556,68 +556,79 @@ namespace Uspeak.Persistence
                 });
 
             modelBuilder.Entity<Tag>().HasData(
-                new Tag() 
-                { 
+                new Tag()
+                {
+                    Id = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5"),
                     Name = "для взрослых",
                     TagKind = TagType.TargetAaudience,
                     CssClass = "adults"
                 },
                 new Tag()
                 {
+                    Id = new Guid("bf53a489-cdca-47c0-ac5c-3437c47c19c6"),
                     Name = "Китайский",
                     TagKind = TagType.StudySubject,
                     CssClass = "ch"
                 },
                 new Tag()
                 {
+                    Id = new Guid("2b474a26-76d2-45ee-be3e-f38eca83d9ee"),
                     Name = "для детей",
                     TagKind = TagType.TargetAaudience,
                     CssClass = "children"
                 },
                 new Tag()
                 {
+                    Id = new Guid("fff0e828-e9c8-4ae5-b33a-df1c1f23f874"),
                     Name = "Немецкий",
                     TagKind = TagType.StudySubject,
                     CssClass = "de"
                 },
                 new Tag()
                 {
+                    Id = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430"),
                     Name = "Английский",
                     TagKind = TagType.StudySubject,
                     CssClass = "eng"
                 },
                 new Tag()
                 {
+                    Id = new Guid("1dceded6-3990-4cb3-bc2e-936d0ae7f79d"),
                     Name = "Подготовка к экзаменам",
                     TagKind = TagType.Goal,
                     CssClass = "exam"
                 },
                 new Tag()
                 {
+                    Id = new Guid("c4e7b67e-809a-40d2-a222-0a12f35ba22f"),
                     Name = "Французский",
                     TagKind = TagType.StudySubject,
                     CssClass = "fr"
                 },
                 new Tag()
                 {
+                    Id = new Guid("b66d4365-0bb7-4ea0-9c63-86166aec8aa3"),
                     Name = "Итальянский",
                     TagKind = TagType.StudySubject,
                     CssClass = "it"
                 },
                 new Tag()
                 {
+                    Id = new Guid("866787e8-9e2e-48ae-aedd-0dcbafa5edcc"),
                     Name = "Математика",
                     TagKind = TagType.StudySubject,
                     CssClass = "math"
                 },
                 new Tag()
                 {
+                    Id = new Guid("a6eecf1c-207a-4214-9897-bb2403aaf9d0"),
                     Name = "Физика",
                     TagKind = TagType.StudySubject,
                     CssClass = "physics"
                 },
                 new Tag()
                 {
+                    Id = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0"),
                     Name = "детей средней и старшей школы",
                     TagKind = TagType.TargetAaudience,
                     CssClass = "teenagers"
