@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography.X509Certificates;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
 using Uspeak.Data.Models.Infrastructure;
@@ -20,12 +21,22 @@ namespace Uspeak.Persistence
         {
             modelBuilder.Entity<Entity>()
                 .HasKey(x => x.Id);
-            modelBuilder.Entity<Entity>()
-                .HasMany(x => x.Tags)
-                .WithOne(x => x.Enitity);
+
+            modelBuilder.Entity<EntityTag>()
+                .HasKey(x => new { x.EntityId, x.TagName });
+
+            modelBuilder.Entity<EntityTag>()
+               .HasOne(sc => sc.Entity)
+               .WithMany(s => s.EntityTags)
+               .HasForeignKey(sc => sc.EntityId);
+
+            modelBuilder.Entity<EntityTag>()
+                .HasOne(sc => sc.Tag)
+                .WithMany(c => c.EntityTags)
+                .HasForeignKey(sc => sc.TagName);
 
             modelBuilder.Entity<Tag>()
-                .HasKey(x => new { x.EnityId, x.Name });
+                .HasKey(x => x.Name);
 
             modelBuilder.Entity<Image>()
                 .HasKey(x => x.Id);
@@ -320,7 +331,7 @@ namespace Uspeak.Persistence
                 {
                     Id = new Guid("73ccf858-3467-4a6b-a8ac-ee7cfc85f620"),
                     Name = "Общий курс по английскому для детей и подростков ( от 5 лет)",
-                    Description = @"Общий курс подразумевает изучение основных аспектов языка : 
+                    Description = @"Общий курс подразумевает изучение основных аспектов языка: 
                         говорение, грамматика, аудирование, фонетика, чтение и письмо. 
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
@@ -330,7 +341,7 @@ namespace Uspeak.Persistence
                 {
                     Id = new Guid("0bd380cf-78af-4338-a508-bc41afe6c1af"),
                     Name = "Общий курс английского для взрослых",
-                    Description = @"Общий курс подразумевает изучение основных аспектов языка : 
+                    Description = @"Общий курс подразумевает изучение основных аспектов языка: 
                         говорение, грамматика, аудирование, фонетика,  чтение  и письмо. 
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
@@ -379,8 +390,8 @@ namespace Uspeak.Persistence
                 {
                     Id = new Guid("5da65f09-8783-4eae-9d77-658c63b11116"),
                     Name = "Общий курс по немецкому для детей и подростков (от 5 лет)",
-                    Description = @"Общий курс подразумевает изучение основных аспектов языка : 
-                        говорение, грамматика, аудирование, фонетика,  чтение  и письмо. 
+                    Description = @"Общий курс подразумевает изучение основных аспектов языка: 
+                        говорение, грамматика, аудирование, фонетика, чтение и письмо. 
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     CssClassesString = "de teenagers"
@@ -389,8 +400,8 @@ namespace Uspeak.Persistence
                 {
                     Id = new Guid("91cfb955-12a6-464a-b8f1-87b40c25fce7"),
                     Name = "Общий курс немецкого для взрослых",
-                    Description = @"Общий курс подразумевает изучение основных аспектов языка : 
-                        говорение, грамматика, аудирование, фонетика,  чтение  и письмо. 
+                    Description = @"Общий курс подразумевает изучение основных аспектов языка: 
+                        говорение, грамматика, аудирование, фонетика, чтение и письмо. 
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     CssClassesString = "de adults"
@@ -410,7 +421,7 @@ namespace Uspeak.Persistence
                     Id = new Guid("59baec0a-54f7-4b35-bb09-53df0468f198"),
                     Name = "Общий курс по французскому для детей и подростков ( от 5 лет)",
                     Description = @"Общий курс подразумевает изучение основных аспектов языка : 
-                        говорение, грамматика, аудирование, фонетика,  чтение  и письмо. 
+                        говорение, грамматика, аудирование, фонетика, чтение и письмо. 
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     CssClassesString = "fr teenagers"
@@ -419,7 +430,7 @@ namespace Uspeak.Persistence
                 {
                     Id = new Guid("6e77f097-c273-42f6-bb1e-bf0d25b1bbe7"),
                     Name = "Общий курс французского для взрослых",
-                    Description = @"Общий курс подразумевает изучение основных аспектов языка : 
+                    Description = @"Общий курс подразумевает изучение основных аспектов языка: 
                         говорение, грамматика, аудирование, фонетика, чтение и письмо. 
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
@@ -539,10 +550,31 @@ namespace Uspeak.Persistence
                     Description = @"«Кубики Зайцева» — пособие для обучения чтению с двух лет. 
                         Эта методика обучения чтению прошла испытание временем, ведь уже более 20 лет она пользуется 
                         огромной популярностью как среди родителей, так и педагогов дошкольных учреждений. 
-                        Обучение с помощью кубиков  обеспечивает наглядность  и системность подачи материала. 
+                        Обучение с помощью кубиков  обеспечивает наглядность и системность подачи материала. 
                         Занятия проходят в игровой форме.",
                     CssClassesString = "children"
                 });
+
+            modelBuilder.Entity<Tag>().HasData(
+                new Tag() 
+                { 
+                    EnityId = new Guid(""),
+                    Name = "",
+                    TagKind = TagType.
+                }
+                );
+//            adults
+//ch
+//children
+//de
+//eng
+//exam
+//fr
+//it
+//math
+//physics
+//teenagers
+
         }
 
         public DbSet<Course> Courses { get; set; }
@@ -574,5 +606,7 @@ namespace Uspeak.Persistence
         public DbSet<Tag> Tags { get; set; }
         
         public DbSet<Image> Images { get; set; }
+
+        public DbSet<EntityTag> EntitiesTags { get; set; }
     }
 }

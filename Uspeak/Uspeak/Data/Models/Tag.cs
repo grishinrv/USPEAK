@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Uspeak.Data.Models
@@ -9,14 +10,10 @@ namespace Uspeak.Data.Models
     public class Tag : INamed
     {
         /// <summary>
-        /// Имя тэга. Часть составного ключа.
+        /// Имя тэга. Ключ.
         /// </summary>
         public string Name { get; set; }
-        /// <summary>
-        /// Id Родительской сущности. Часть составного ключа.
-        /// </summary>
-        public Guid EnityId { get; set; }
-        public Entity Enitity { get; set; }
+        public virtual ICollection<EntityTag> EntityTags { get; set; }
         public TagType TagKind { get; set; }
     }
 }
