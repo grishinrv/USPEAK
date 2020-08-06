@@ -20,6 +20,8 @@ namespace Uspeak.Data.Models
         [Description("Скидки")]
         Discount = 5,
         [Description("Сложность")]
-        Сomplexity = 6
+        Сomplexity = 6,
+        [Description("Цель")]
+        Goal = 7
     }
 }

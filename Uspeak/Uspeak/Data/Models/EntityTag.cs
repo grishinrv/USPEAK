@@ -6,7 +6,7 @@ namespace Uspeak.Data.Models
     {
         public Guid EntityId { get; set; }
         public Entity Entity { get; set; }
-        public string TagName { get; set; }
+        public Guid TagId { get; set; }
         public Tag Tag { get; set; }
     }
 }

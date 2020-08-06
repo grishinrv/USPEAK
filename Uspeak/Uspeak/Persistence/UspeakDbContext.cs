@@ -23,7 +23,7 @@ namespace Uspeak.Persistence
                 .HasKey(x => x.Id);
 
             modelBuilder.Entity<EntityTag>()
-                .HasKey(x => new { x.EntityId, x.TagName });
+                .HasKey(x => new { x.EntityId, x.TagId });
 
             modelBuilder.Entity<EntityTag>()
                .HasOne(sc => sc.Entity)
@@ -33,10 +33,10 @@ namespace Uspeak.Persistence
             modelBuilder.Entity<EntityTag>()
                 .HasOne(sc => sc.Tag)
                 .WithMany(c => c.EntityTags)
-                .HasForeignKey(sc => sc.TagName);
+                .HasForeignKey(sc => sc.TagId);
 
             modelBuilder.Entity<Tag>()
-                .HasKey(x => x.Name);
+                .HasKey(x => x.Id);
 
             modelBuilder.Entity<Image>()
                 .HasKey(x => x.Id);
@@ -558,23 +558,71 @@ namespace Uspeak.Persistence
             modelBuilder.Entity<Tag>().HasData(
                 new Tag() 
                 { 
-                    EnityId = new Guid(""),
-                    Name = "",
-                    TagKind = TagType.
+                    Name = "для взрослых",
+                    TagKind = TagType.TargetAaudience,
+                    CssClass = "adults"
+                },
+                new Tag()
+                {
+                    Name = "Китайский",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "ch"
+                },
+                new Tag()
+                {
+                    Name = "для детей",
+                    TagKind = TagType.TargetAaudience,
+                    CssClass = "children"
+                },
+                new Tag()
+                {
+                    Name = "Немецкий",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "de"
+                },
+                new Tag()
+                {
+                    Name = "Английский",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "eng"
+                },
+                new Tag()
+                {
+                    Name = "Подготовка к экзаменам",
+                    TagKind = TagType.Goal,
+                    CssClass = "exam"
+                },
+                new Tag()
+                {
+                    Name = "Французский",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "fr"
+                },
+                new Tag()
+                {
+                    Name = "Итальянский",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "it"
+                },
+                new Tag()
+                {
+                    Name = "Математика",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "math"
+                },
+                new Tag()
+                {
+                    Name = "Физика",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "physics"
+                },
+                new Tag()
+                {
+                    Name = "детей средней и старшей школы",
+                    TagKind = TagType.TargetAaudience,
+                    CssClass = "teenagers"
                 }
-                );
-//            adults
-//ch
-//children
-//de
-//eng
-//exam
-//fr
-//it
-//math
-//physics
-//teenagers
-
+            );
         }
 
         public DbSet<Course> Courses { get; set; }
