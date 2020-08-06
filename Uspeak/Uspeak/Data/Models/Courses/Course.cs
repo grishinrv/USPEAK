@@ -10,10 +10,10 @@ namespace Uspeak.Data.Models.Courses
         public string Name { get; set; }
         public string Description { get; set; }
         public virtual ICollection<TestSettings> Tests { get; set; }
-        public Guid PromoImageId { get; set; }
+        public Guid? PromoImageId { get; set; }
         public Image PromoImage { get; set; }
         public string CssClassesString { get; set; }
-        public int LessonsQuantity { get; set; }
-        public int LessonDurationMinutes { get; set; }
+        public int? LessonsQuantity { get; set; }
+        public int? LessonDurationMinutes { get; set; }
     }
 }
