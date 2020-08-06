@@ -19,5 +19,9 @@ namespace Uspeak.Data.Models
         /// Список подвешеных тэгов.
         /// </summary>
         public virtual ICollection<Tag> Tags { get; set; }
+        /// <summary>
+        /// Время создания сущности в системе.
+        /// </summary>
+        public DateTime CreatedTime { get; set; }
     }
 }
