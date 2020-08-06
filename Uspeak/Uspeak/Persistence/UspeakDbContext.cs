@@ -16,9 +16,23 @@ namespace Uspeak.Persistence
         }
 
         protected sealed override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
-            //modelBuilder.Entity<Course>()
-            //    .HasKey()
+        {
+            modelBuilder.Entity<Entity>()
+                .HasKey(x => x.Id);
+            modelBuilder.Entity<Entity>()
+                .HasMany(x => x.Tags)
+                .WithOne(x => x.Enitity);
+
+            modelBuilder.Entity<Tag>()
+                .HasKey(x => new { x.EnityId, x.Name });
+
+            modelBuilder.Entity<Image>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Course>()
+                .HasKey(x => x.Id);
+            modelBuilder.Entity<Course>()
+                .HasOne(x => x.PromoImage);
 
             //modelBuilder.Entity<User>().
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Uspeak.Data.Models.Users;
 
 namespace Uspeak.Data.Models
 {
@@ -9,7 +10,10 @@ namespace Uspeak.Data.Models
         /// Image path.
         /// </summary>
         public string Path { get; set; }
+        public string DisplayedName { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
+        //public Guid UploaderId { get; set; }
+        //public User Uploader { get; set; }
     }
 }
