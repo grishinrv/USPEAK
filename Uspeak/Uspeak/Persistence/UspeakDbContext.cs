@@ -314,6 +314,218 @@ namespace Uspeak.Persistence
                     CreatedTime = createdTime
                 });
 
+            modelBuilder.Entity<EntityTag>().HasData(
+                new EntityTag()
+                {
+                    EntityId = new Guid("0b5c416f-4bd6-43c2-86c7-f37bb9284a01"),
+                    TagId = new Guid("2b474a26-76d2-45ee-be3e-f38eca83d9ee")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("38e207fc-de41-47fa-bb9b-912e83328896"),
+                    TagId = new Guid("a6eecf1c-207a-4214-9897-bb2403aaf9d0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("38e207fc-de41-47fa-bb9b-912e83328896"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("89268a4f-1774-401f-8083-d2b316c20975"),
+                    TagId = new Guid("a6eecf1c-207a-4214-9897-bb2403aaf9d0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("89268a4f-1774-401f-8083-d2b316c20975"),
+                    TagId = new Guid("1dceded6-3990-4cb3-bc2e-936d0ae7f79d")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("b18c7332-bbbd-44bf-987e-313f43fd55e0"),
+                    TagId = new Guid("2b474a26-76d2-45ee-be3e-f38eca83d9ee")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("b18c7332-bbbd-44bf-987e-313f43fd55e0"),
+                    TagId = new Guid("866787e8-9e2e-48ae-aedd-0dcbafa5edcc")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("6bedac8d-367f-4157-ba9c-85bf06af4827"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("6bedac8d-367f-4157-ba9c-85bf06af4827"),
+                    TagId = new Guid("866787e8-9e2e-48ae-aedd-0dcbafa5edcc")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("ad2f81e7-8107-4eb5-8c11-9086335fe7c2"),
+                    TagId = new Guid("866787e8-9e2e-48ae-aedd-0dcbafa5edcc")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("ad2f81e7-8107-4eb5-8c11-9086335fe7c2"),
+                    TagId = new Guid("1dceded6-3990-4cb3-bc2e-936d0ae7f79d")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("59cbe049-bc81-4f19-9264-707ac2734d77"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("59cbe049-bc81-4f19-9264-707ac2734d77"),
+                    TagId = new Guid("bf53a489-cdca-47c0-ac5c-3437c47c19c6")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("32a53c0f-87ff-403d-b3f2-7aa978c37531"),
+                    TagId = new Guid("bf53a489-cdca-47c0-ac5c-3437c47c19c6")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("32a53c0f-87ff-403d-b3f2-7aa978c37531"),
+                    TagId = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("8b4739e7-61d1-4213-8e61-433c91a87a1e"),
+                    TagId = new Guid("b66d4365-0bb7-4ea0-9c63-86166aec8aa3")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("8b4739e7-61d1-4213-8e61-433c91a87a1e"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("872e64dd-fcd5-4650-b454-17d82f43a2a7"),
+                    TagId = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("872e64dd-fcd5-4650-b454-17d82f43a2a7"),
+                    TagId = new Guid("b66d4365-0bb7-4ea0-9c63-86166aec8aa3")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("0ff2e69b-05fa-4e3c-8f16-b85e699baee3"),
+                    TagId = new Guid("b66d4365-0bb7-4ea0-9c63-86166aec8aa3")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("59baec0a-54f7-4b35-bb09-53df0468f198"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("59baec0a-54f7-4b35-bb09-53df0468f198"),
+                    TagId = new Guid("c4e7b67e-809a-40d2-a222-0a12f35ba22f")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("6e77f097-c273-42f6-bb1e-bf0d25b1bbe7"),
+                    TagId = new Guid("c4e7b67e-809a-40d2-a222-0a12f35ba22f")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("6e77f097-c273-42f6-bb1e-bf0d25b1bbe7"),
+                    TagId = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("df87b337-60b6-4011-b781-3cd2d8dce904"),
+                    TagId = new Guid("c4e7b67e-809a-40d2-a222-0a12f35ba22f")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("5da65f09-8783-4eae-9d77-658c63b11116"),
+                    TagId = new Guid("fff0e828-e9c8-4ae5-b33a-df1c1f23f874")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("5da65f09-8783-4eae-9d77-658c63b11116"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("91cfb955-12a6-464a-b8f1-87b40c25fce7"),
+                    TagId = new Guid("fff0e828-e9c8-4ae5-b33a-df1c1f23f874")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("91cfb955-12a6-464a-b8f1-87b40c25fce7"),
+                    TagId = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("c182e464-9ccb-4e26-812f-4c90d178f57f"),
+                    TagId = new Guid("fff0e828-e9c8-4ae5-b33a-df1c1f23f874")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("30bc01bf-8cbe-4252-a5f6-4017f601c8c3"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("30bc01bf-8cbe-4252-a5f6-4017f601c8c3"),
+                    TagId = new Guid("2b474a26-76d2-45ee-be3e-f38eca83d9ee")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("73ccf858-3467-4a6b-a8ac-ee7cfc85f620"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("73ccf858-3467-4a6b-a8ac-ee7cfc85f620"),
+                    TagId = new Guid("9608a36e-6e89-4852-bab4-c4c06454c1f0")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("0bd380cf-78af-4338-a508-bc41afe6c1af"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("0bd380cf-78af-4338-a508-bc41afe6c1af"),
+                    TagId = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("59ac3930-3825-4cb2-9fe7-4ff499947176"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("59ac3930-3825-4cb2-9fe7-4ff499947176"),
+                    TagId = new Guid("1dceded6-3990-4cb3-bc2e-936d0ae7f79d")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("c401cbbc-5e22-4360-b5c5-574167cc9cf8"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("c401cbbc-5e22-4360-b5c5-574167cc9cf8"),
+                    TagId = new Guid("d1a18186-9b28-4e8c-8d2b-958c0658c9f5")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("b975c806-db88-414c-9e00-9d245ac7acc9"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("a032649c-5f7d-4a64-b13b-468f46764e98"),
+                    TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                });
+
             modelBuilder.Entity<Course>().HasData(
             #region Английский
                  new Course()
