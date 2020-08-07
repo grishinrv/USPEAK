@@ -23,5 +23,13 @@ namespace Uspeak.Data.Models
         /// Время создания сущности в системе.
         /// </summary>
         public DateTime CreatedTime { get; set; }
+        /// <summary>
+        /// Статус ЖЦ сущности
+        /// </summary>
+        public EntityStatus Status { get; set; }
+        /// <summary>
+        /// Время установки текущего статуса ЖЦ.
+        /// </summary>
+        public DateTime StatusChangedTime { get; set; }
     }
 }

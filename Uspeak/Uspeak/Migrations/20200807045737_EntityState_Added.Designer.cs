@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Uspeak.Persistence;
 
 namespace Uspeak.Migrations
 {
     [DbContext(typeof(UspeakDbContext))]
-    partial class UspeakDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200807045737_EntityState_Added")]
+    partial class EntityState_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -317,8 +319,8 @@ namespace Uspeak.Migrations
                         Занятия проходят в мини-группах (до 4 человек ), что обеспечивает индивидуальный подход к каждому малышу.",
                             EnityKind = 2,
                             Name = "Подготовка к школе с английским языком",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -330,8 +332,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс по английскому для детей и подростков ( от 5 лет)",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -343,8 +345,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс английского для взрослых",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -356,8 +358,8 @@ namespace Uspeak.Migrations
                         с тренировкой заполнения бланков.",
                             EnityKind = 2,
                             Name = "Подготовка к ОГЭ и ЕГЭ",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -366,8 +368,8 @@ namespace Uspeak.Migrations
                             Description = "Если вы хотите общаться без помощи гида в отеле, аэропорту, гостинице или в городе, тогда этот курс для Вас.",
                             EnityKind = 2,
                             Name = "Туристический английский",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -380,8 +382,8 @@ namespace Uspeak.Migrations
                         После кино-сеанса мы, конечно, обсудим фильм и все, возможно, появившиеся вопросы.",
                             EnityKind = 2,
                             Name = "Кинозал на английском",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -392,8 +394,8 @@ namespace Uspeak.Migrations
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                             EnityKind = 2,
                             Name = "Английский разговорный клуб “Tea and talk”",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -405,8 +407,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс по немецкому для детей и подростков (от 5 лет)",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -418,8 +420,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс немецкого для взрослых",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -429,8 +431,8 @@ namespace Uspeak.Migrations
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                             EnityKind = 2,
                             Name = "Разговорный немецкий",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -442,8 +444,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс по французскому для детей и подростков ( от 5 лет)",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -455,8 +457,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс французского для взрослых",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -466,8 +468,8 @@ namespace Uspeak.Migrations
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                             EnityKind = 2,
                             Name = "Разговорный французский",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -479,8 +481,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс по итальянскому для детей и подростков ( от 5 лет)",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -492,8 +494,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс итальянского для взрослых",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -503,8 +505,8 @@ namespace Uspeak.Migrations
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                             EnityKind = 2,
                             Name = "Разговорный итальянский",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -516,8 +518,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс по китайскому для детей и подростков ( от 5 лет)",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -529,8 +531,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                             EnityKind = 2,
                             Name = "Общий курс китайского для взрослых",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -541,8 +543,8 @@ namespace Uspeak.Migrations
                         Занятия могут быть как индивидуальными, так и в мини-группе (до 3 человек)",
                             EnityKind = 2,
                             Name = "Курс для дошкольников",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -551,8 +553,8 @@ namespace Uspeak.Migrations
                             Description = "Курс направлен на развитие математических знаний, а также на устранение пробелов знаний.",
                             EnityKind = 2,
                             Name = "Курс для детей младшей,  средней  и старшей школы",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -563,8 +565,8 @@ namespace Uspeak.Migrations
                         Также в ходе курса предусмотрены пробные тестирования с тренировкой заполнения экзаменационных бланков.",
                             EnityKind = 2,
                             Name = "Подготовка к ОГЭ и ЕГЭ",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -573,8 +575,8 @@ namespace Uspeak.Migrations
                             Description = "Курс направлен на развитие и углубление знаний, а также на устранение пробелов знаний.",
                             EnityKind = 2,
                             Name = "Курс для детей средней и старшей школы",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -586,8 +588,8 @@ namespace Uspeak.Migrations
                         с тренировкой заполнения бланков.",
                             EnityKind = 2,
                             Name = "Подготовка к ОГЭ и ЕГЭ",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -600,8 +602,8 @@ namespace Uspeak.Migrations
                         Занятия проходят в игровой форме.",
                             EnityKind = 2,
                             Name = "Обучение чтению на основе кубиков Зайцева",
-                            Status = 1,
-                            StatusChangedTime = new DateTime(2020, 8, 6, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Status = 0,
+                            StatusChangedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

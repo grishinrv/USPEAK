@@ -78,7 +78,9 @@ namespace Uspeak.Persistence
                         Курс поможет развитию логики, любознательности и не отпугнет желание ребенка учиться. 
                         Занятия проходят в мини-группах (до 4 человек ), что обеспечивает индивидуальный подход к каждому малышу.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -89,7 +91,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -100,7 +104,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -111,7 +117,9 @@ namespace Uspeak.Persistence
                         а также методики их выполнения. Также в ходе курса предусмотрены пробные тестирования 
                         с тренировкой заполнения бланков.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -119,7 +127,9 @@ namespace Uspeak.Persistence
                     Name = "Туристический английский",
                     Description = @"Если вы хотите общаться без помощи гида в отеле, аэропорту, гостинице или в городе, тогда этот курс для Вас.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -131,7 +141,9 @@ namespace Uspeak.Persistence
                         встречаемые в фильме. Все это поможет комфортно и понятно 😊 посмотреть фильм. 
                         После кино-сеанса мы, конечно, обсудим фильм и все, возможно, появившиеся вопросы.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -141,7 +153,9 @@ namespace Uspeak.Persistence
                         Курс подойдет тем, кто хочет попрактиковать разговорную речь или наконец-то снять языковой барьер.
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
             #region Немецкий
@@ -154,7 +168,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -165,7 +181,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -174,7 +192,9 @@ namespace Uspeak.Persistence
                     Description = @"Курс подойдет тем, кто хочет попрактиковать разговорную речь или наконец-то снять языковой барьер. 
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
             #region Французский
@@ -187,7 +207,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -198,7 +220,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -207,7 +231,9 @@ namespace Uspeak.Persistence
                     Description = @"Курс подойдет тем, кто хочет попрактиковать разговорную речь или наконец-то снять языковой барьер. 
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
             #region Итальянский
@@ -220,7 +246,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -231,7 +259,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -240,7 +270,9 @@ namespace Uspeak.Persistence
                     Description = @"Курс подойдет тем, кто хочет попрактиковать разговорную речь или наконец-то снять языковой барьер. 
                         Занятие будет комфортно для любого уровня – группа будет подобрана индивидуально для Вас.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
             #region Китайский
@@ -253,7 +285,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -264,7 +298,9 @@ namespace Uspeak.Persistence
                         Этот курс походит для любого уровня владения языком – курс будет подобран индивидуально для Вас. 
                         Занятия могут быть в группе и индивидуально, как в студии, так и on-line.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
             #region Математика
@@ -276,7 +312,9 @@ namespace Uspeak.Persistence
                         Занятие ведет опытный педагог, который найдет ключик к любому малышу. 
                         Занятия могут быть как индивидуальными, так и в мини-группе (до 3 человек)",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -284,7 +322,9 @@ namespace Uspeak.Persistence
                     Name = "Курс для детей младшей,  средней  и старшей школы",
                     Description = @"Курс направлен на развитие математических знаний, а также на устранение пробелов знаний.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -294,7 +334,9 @@ namespace Uspeak.Persistence
                         Особое внимание уделяется рассмотрению специфики тестовых заданий, а также методики их выполнения. 
                         Также в ходе курса предусмотрены пробные тестирования с тренировкой заполнения экзаменационных бланков.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
             # region Физика
@@ -304,7 +346,9 @@ namespace Uspeak.Persistence
                     Name = "Курс для детей средней и старшей школы",
                     Description = @"Курс направлен на развитие и углубление знаний, а также на устранение пробелов знаний.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
                 new Entity()
                 {
@@ -315,7 +359,9 @@ namespace Uspeak.Persistence
                         а также методики их выполнения. Также в ходе курса предусмотрены пробные тестирования 
                         с тренировкой заполнения бланков.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 },
             #endregion
                 new Entity()
@@ -328,7 +374,9 @@ namespace Uspeak.Persistence
                         Обучение с помощью кубиков  обеспечивает наглядность  и системность подачи материала. 
                         Занятия проходят в игровой форме.",
                     EnityKind = EntityType.Course,
-                    CreatedTime = createdTime
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 });
 
             modelBuilder.Entity<EntityTag>().HasData(
