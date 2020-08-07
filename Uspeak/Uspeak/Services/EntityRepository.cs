@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +9,7 @@ using Uspeak.Services.Exceptions;
 
 namespace Uspeak.Services
 {
-    public class EntityRepository
+    public class EntityRepository : IEntityRepository
     {
         private readonly IContextFactory _contextFactory;
         public EntityRepository(IContextFactory contextFactory)
