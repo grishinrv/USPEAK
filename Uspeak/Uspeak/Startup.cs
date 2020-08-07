@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using Uspeak.Persistence;
+using Uspeak.Services;
 
 namespace Uspeak
 {
@@ -27,14 +28,13 @@ namespace Uspeak
                 new Infrastructure.ConfigurationProvider( Configuration));
             services.AddSingleton<IContextFactory>( x => 
                 new ContextFactory(Configuration.GetConnectionString("UspeakDatabase")));
+            services.AddSingleton<IEntityRepository, EntityRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
-            // для поддержки миграций 
-            services.AddDbContext<UspeakDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
