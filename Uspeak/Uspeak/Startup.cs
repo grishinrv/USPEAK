@@ -33,6 +33,8 @@ namespace Uspeak
             {
                 configuration.RootPath = "ClientApp/build";
             });
+            // для поддержки миграций 
+            services.AddDbContext<UspeakDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
