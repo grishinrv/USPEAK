@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography.X509Certificates;
@@ -17,8 +18,24 @@ namespace Uspeak.Persistence
         {
         }
 
+        /// <summary>
+        /// Метод нужен для поддержки создания миграций в designTime
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
+        protected sealed override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("UspeakDatabase"));
+        }
+
         protected sealed override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<RuntimeConfiguration>()
+                .HasKey(x => x.Key);
+
             modelBuilder.Entity<Entity>()
                 .HasKey(x => x.Id);
 
@@ -850,27 +867,27 @@ namespace Uspeak.Persistence
 
         public DbSet<Course> Courses { get; set; }
 
-        public DbSet<EventInstance> Events { get; set; }
+        //public DbSet<EventInstance> Events { get; set; }
 
         public DbSet<RuntimeConfiguration> Config { get; set; }
 
-        public DbSet<Group> Groups { get; set; }
+        //public DbSet<Group> Groups { get; set; }
 
-        public DbSet<Lesson> Lessons { get; set; }
+        //public DbSet<Lesson> Lessons { get; set; }
 
-        public DbSet<LessonStudentPresence> Presences { get; set; }
+        //public DbSet<LessonStudentPresence> Presences { get; set; }
 
-        public DbSet<Student> Students { get; set; }
+        //public DbSet<Student> Students { get; set; }
 
-        public DbSet<Teacher> Teachers { get; set; }
+        //public DbSet<Teacher> Teachers { get; set; }
 
-        public DbSet<AnswerOption> AnswerOptions { get; set; }
+        //public DbSet<AnswerOption> AnswerOptions { get; set; }
 
-        public DbSet<QuestionSettings> QuestionSettings { get; set; }
+        //public DbSet<QuestionSettings> QuestionSettings { get; set; }
 
-        public DbSet<TestSettings> TestSettings { get; set; }
+        //public DbSet<TestSettings> TestSettings { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
         public DbSet<Entity> Entities { get; set; }
 
