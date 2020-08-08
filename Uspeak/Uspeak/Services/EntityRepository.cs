@@ -17,33 +17,33 @@ namespace Uspeak.Services
             _contextFactory = contextFactory;
         }
 
-        public Task<List<Entity>> GetEntities(EntityStatus status)
+        public async Task<List<Entity>> GetEntities(EntityStatus status)
         {
             using (var context = _contextFactory.Create())
             {
-                return context.Entities.Where(x => x.Status == status).ToListAsync();
+                return await context.Entities.Where(x => x.Status == status).ToListAsync();
             }
         }
 
-        public Task<List<Entity>> GetEntities(EntityStatus status, EntityType type)
+        public async Task<List<Entity>> GetEntities(EntityStatus status, EntityType type)
         {
             using (var context = _contextFactory.Create())
             {
-                return context.Entities.Where(x =>
+                return await context.Entities.Where(x =>
                     x.Status == status
                     && x.EnityKind == type).ToListAsync();
             }
         }
 
-        public Task<List<Entity>> GetEntities(EntityType type)
+        public async Task<List<Entity>> GetEntities(EntityType type)
         {
             using (var context = _contextFactory.Create())
             {
-                return context.Entities.Where(x => x.EnityKind == type).ToListAsync();
+                return await context.Entities.Where(x => x.EnityKind == type).ToListAsync();
             }
         }
 
-        public Task<List<Entity>> GetEnities(EntityStatus status, DateTime statusSetEarlierThen,
+        public async Task<List<Entity>> GetEnities(EntityStatus status, DateTime statusSetEarlierThen,
             DateTime? statusSetLaterThen)
         {
             if (statusSetLaterThen != null && statusSetLaterThen > statusSetEarlierThen )
@@ -56,7 +56,7 @@ namespace Uspeak.Services
                                             && x.StatusChangedTime <= statusSetEarlierThen);
                 if (statusSetLaterThen != null)
                     query = query.Where(x => x.StatusChangedTime >= statusSetLaterThen);
-                return query.ToListAsync();
+                return await query.ToListAsync();
             }
         }
     }
