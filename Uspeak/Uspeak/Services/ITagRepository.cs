@@ -7,11 +7,12 @@ namespace Uspeak.Services
     public interface ITagRepository
     {
         /// <summary>
-        /// Получить список тэгов по типу тэга, и по статусу сущностей.
+        /// Получить список тэгов по типу тэга, типу сущностей и статусу сущностей.
         /// </summary>
         /// <param name="tagTypetype">тип тэга</param>
-        /// <param name="entityType">статус сущности</param>
-        /// <returns>Список действующих тэгов по типу.</returns>
-        Task<List<Tag>> GetTags(TagType tagType, EntityType entityType);
+        /// <param name="entityType">тип сущности</param>
+        /// <param name="status">статус сущности</param>
+        /// <returns>Список тэгов по типу и статусу сущности.</returns>
+        Task<List<Tag>> GetTags(TagType tagType, EntityType entityType, EntityStatus status);
     }
 }

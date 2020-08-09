@@ -16,12 +16,12 @@ namespace Uspeak.Services
             _contextFactory = contextFactory;
         }
 
-        public async Task<List<Tag>> GetTags(TagType tagType, EntityType entityType)
+        public async Task<List<Tag>> GetTags(TagType tagType, EntityType entityType, EntityStatus status)
         {
             using (var context = _contextFactory.Create())
             {
                 return await context.Entities
-                    .Where(x=> x.EnityKind == entityType)
+                    .Where(x=> x.EnityKind == entityType && x.Status == status)
                     .SelectMany<Entity, Tag>(t => t.EntityTags.Select(e => e.Tag).Where(a =>a.TagKind == tagType))
                     .Distinct()
                     .ToListAsync();
