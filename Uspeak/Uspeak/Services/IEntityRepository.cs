@@ -11,7 +11,7 @@ namespace Uspeak.Services
         Task<List<Entity>> GetEntities(EntityStatus status, EntityType type);
         Task<List<Entity>> GetEntities(EntityType type);
 
-        Task<List<Entity>> GetEnities(EntityStatus status, DateTime statusSetEarlierThen,
+        Task<List<Entity>> GetEntities(EntityStatus status, DateTime statusSetEarlierThen,
             DateTime? statusSetLaterThen);
     }
 }

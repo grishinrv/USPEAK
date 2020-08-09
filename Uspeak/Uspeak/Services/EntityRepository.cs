@@ -43,7 +43,7 @@ namespace Uspeak.Services
             }
         }
 
-        public async Task<List<Entity>> GetEnities(EntityStatus status, DateTime statusSetEarlierThen,
+        public async Task<List<Entity>> GetEntities(EntityStatus status, DateTime statusSetEarlierThen,
             DateTime? statusSetLaterThen)
         {
             if (statusSetLaterThen != null && statusSetLaterThen > statusSetEarlierThen )
