@@ -30,6 +30,7 @@ namespace Uspeak
                 new ContextFactory(Configuration.GetConnectionString("UspeakDatabase")));
             services.AddSingleton<IEntityRepository, EntityRepository>();
             services.AddSingleton<ITagRepository, TagRepository>();
+            services.AddSingleton<ICourseRepository, CourseRepository>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

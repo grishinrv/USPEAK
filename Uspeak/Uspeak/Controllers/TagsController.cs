@@ -17,7 +17,11 @@ namespace Uspeak.Controllers
             _tagRepository = tagRepository;
         }
 
-        public Task<List<Tag>> GetTags(TagType tagType, EntityType entityType) =>
-            _tagRepository.GetTags(tagType, entityType);
+        /// <summary>
+        /// Получить список предметов, имеющих активные опубликованные курсы.
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<Tag>> GetSubjects() =>
+            _tagRepository.GetTags(TagType.StudySubject, EntityType.Course, EntityStatus.Published);
     }
 }
