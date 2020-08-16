@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NLog;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Uspeak.Data.Models;
 using Uspeak.Services;
