@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NLog;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Uspeak.Data.Models;
@@ -7,7 +8,7 @@ using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
-    public class TagsController : Controller
+    public class TagsController : ControllerBase
     {
         private readonly ITagRepository _tagRepository;
         private readonly ILogger _logger;
@@ -21,14 +22,12 @@ namespace Uspeak.Controllers
         /// <summary>
         /// Получить список предметов, имеющих активные опубликованные курсы.
         /// </summary>
-        /// <returns>List<Tag></Tag></returns>
         [HttpGet]
-        public async Task<JsonResult> GetSubjects() 
+        public async Task<List<Tag>> GetSubjects() 
         {
             //_logger.Trace("Запрос получения списков предметов");
             var result = await _tagRepository.GetTags(TagType.StudySubject, EntityType.Course, EntityStatus.Published);
-            var jsonResult = Json(result.FirstOrDefault());
-            return jsonResult;
+            return result;
         }
     }
 }

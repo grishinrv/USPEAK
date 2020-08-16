@@ -5,7 +5,7 @@ using Uspeak.Data.Models.Tests;
 
 namespace Uspeak.Controllers
 {
-    public class QuestionSettingsController : Controller
+    public class QuestionSettingsController : ControllerBase
     {
         private readonly ILogger _logger;
 
@@ -22,7 +22,7 @@ namespace Uspeak.Controllers
         }
 
         [HttpGet]
-        public JsonResult CreateQuestion()
+        public QuestionSettings CreateQuestion()
         {
             //_logger.Trace("Запрос создания шаблона вопроса");
             var result =  new QuestionSettings() 
@@ -30,7 +30,7 @@ namespace Uspeak.Controllers
                 Name = "How many help-verbs are there in English language?",
                 Description="Choose one right answer"
             };
-            return Json(result);
+            return result;
         }
     }
 }
