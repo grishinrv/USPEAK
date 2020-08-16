@@ -56,7 +56,7 @@ export class QuestionTemplate extends Component {
     }
 
     async populateQuestionData() {
-        const response = await fetch('QuestionSettings');
+        const response = await fetch('QuestionSettings/CreateQuestion');
         const data = await response.json();
         this.setState({ question: data, loading: false });
     }

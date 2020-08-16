@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NLog;
+using System.Linq;
 using System.Threading.Tasks;
 using Uspeak.Data.Models;
 using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
-    public class TagsController : ControllerBase
+    public class TagsController : Controller
     {
         private readonly ITagRepository _tagRepository;
         private readonly ILogger _logger;
@@ -22,11 +23,12 @@ namespace Uspeak.Controllers
         /// </summary>
         /// <returns>List<Tag></Tag></returns>
         [HttpGet]
-        public async Task<IActionResult> GetSubjects() 
+        public async Task<JsonResult> GetSubjects() 
         {
-            _logger.Trace("Запрос получения списков предметов");
+            //_logger.Trace("Запрос получения списков предметов");
             var result = await _tagRepository.GetTags(TagType.StudySubject, EntityType.Course, EntityStatus.Published);
-            return Ok(result);
+            var jsonResult = Json(result.FirstOrDefault());
+            return jsonResult;
         }
     }
 }

@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
+import '../styles/Common.css';
 
 export class Home extends Component {
-    static displayName = Home.name;
+  static displayName = Home.name;
 
-    raiseInvoiceClicked() {
-        window.open("www.google.com"); //to open new page
-    }
+  constructor(props) {
+    super(props);
+    this.state = { subjects: null, loading: true };
+  }
 
-  render () {
+  componentDidMount() {
+    this.getSubjects();
+  }
+
+  static renderSubjects(subjects) {
     return (
-      <div>
-        <h1>Пример стилей оформления сайта (Заголовок)</h1>
-        <p>Параграф</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>пример</a> ссылок</li>
-        </ul>
-        <p>Пример списка:</p>
-        <ul>
-          <li><strong>Навигация</strong>. Например, нажмите <em>счетчик</em> потом <em>Назад,</em> чтобы вернуться сюда.</li>
-          <li><strong>Еще элемент списка</strong></li>
-          <li><strong>Другой элемент списка</strong></li>
-        </ul>
-            <button type="button" className="btn btn-primary" onClick={this.raiseInvoiceClicked}>Начать урок</button>
+      <div class="flexlist">
+        <div class="flexitem"/>
+        <div class="flexitem"/>
+        <div class="flexitem"/>
+        <div class="flexitem"/>
+        <div class="flexitem"/>
+        <div class="flexitem"/>
       </div>
     );
+  }
+
+  render () {
+    let contents = this.state.loading
+      ? <p><em>Loading...</em></p>
+      : Home.renderSubjects(this.state.subjects);
+    return (
+      <div>
+        <h1 style={{"text-align": "center"}}>Направления обучения</h1>
+        {contents}
+      </div>
+    );
+  }
+
+  async getSubjects() {
+    const response = await fetch('Tags/GetSubjects');
+    const data = await response.json();
+    this.setState({ subjects: data, loading: false });
   }
 }
