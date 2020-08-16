@@ -21,6 +21,7 @@ namespace Uspeak.Controllers
         /// Получить список предметов, имеющих активные опубликованные курсы.
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public Task<List<Tag>> GetSubjects() =>
             _tagRepository.GetTags(TagType.StudySubject, EntityType.Course, EntityStatus.Published);
     }
