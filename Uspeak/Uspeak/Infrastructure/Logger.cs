@@ -14,13 +14,13 @@ namespace Uspeak.Infrastructure
     {
         public Logger(IWebHostEnvironment env)
         {
-            _path = env.ContentRootPath + "/Logs/Log.txt";
+            _path = env.ContentRootPath + "/Log.txt";
         }
         private string _path;
         private void Write(string message, string level = "Debug")
         {
-            var content = $"{DateTime.Now} - {level} - {message}";
-            File.AppendAllTextAsync(_path, content);
+            var content = $"{Environment.NewLine}{DateTime.Now} - {level} - {message}";
+            File.AppendAllText(_path, content);
         }
 
         public bool IsTraceEnabled => true;
