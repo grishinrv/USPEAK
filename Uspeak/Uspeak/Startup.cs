@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NLog;
 using System;
+using Uspeak.Infrastructure;
 using Uspeak.Persistence;
 using Uspeak.Services;
 
@@ -31,6 +33,7 @@ namespace Uspeak
             services.AddSingleton<IEntityRepository, EntityRepository>();
             services.AddSingleton<ITagRepository, TagRepository>();
             services.AddSingleton<ICourseRepository, CourseRepository>();
+            services.AddSingleton<ILogger, Infrastructure.Logger>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -62,7 +65,7 @@ namespace Uspeak
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action}/{id?}");
             });
 
             app.UseSpa(spa =>
