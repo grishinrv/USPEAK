@@ -15,13 +15,17 @@ export class Home extends Component {
 
   static renderSubjects(subjects) {
     return (
-      <div class="flexlist">
-        <div class="flexitem"/>
-        <div class="flexitem"/>
-        <div class="flexitem"/>
-        <div class="flexitem"/>
-        <div class="flexitem"/>
-        <div class="flexitem"/>
+      <div className="flexlist">
+        <div className="flexitem">
+          <div className="eng"/>
+        </div>
+        <div className="flexitem eng"/>
+        <div className="flexitem"/>
+        <div className="flexitem"/>
+        <div className="flexitem"/>
+        <div className="flexitem"/>
+        <div className="flexitem"/>
+        <div className="flexitem"/>
       </div>
     );
   }
@@ -32,7 +36,7 @@ export class Home extends Component {
       : Home.renderSubjects(this.state.subjects);
     return (
       <div>
-        <h1 style={{"text-align": "center"}}>Направления обучения</h1>
+        <h1 style={{"textAlign": "center"}}>Направления обучения</h1>
         {contents}
       </div>
     );
