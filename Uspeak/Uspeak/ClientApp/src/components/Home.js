@@ -6,7 +6,7 @@ export class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { subjects: null, loading: true };
+    this.state = { subjects: [], loading: true };
   }
 
   componentDidMount() {
@@ -16,9 +16,7 @@ export class Home extends Component {
   static renderSubjects(subjects) {
     return (
       <div className="flexlist">
-        <div className="flexitem">
-          <div className="eng"/>
-        </div>
+        <div className="flexitem eng"/>
         <div className="flexitem eng"/>
         <div className="flexitem"/>
         <div className="flexitem"/>
@@ -43,7 +41,7 @@ export class Home extends Component {
   }
 
   async getSubjects() {
-    const response = await fetch('Tags/GetSubjects');
+    const response = await fetch('/Tags/GetSubjects');
     const data = await response.json();
     this.setState({ subjects: data, loading: false });
   }
