@@ -5,8 +5,6 @@ using Uspeak.Data.Models.Tests;
 
 namespace Uspeak.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class QuestionSettingsController : ControllerBase
     {
         private readonly ILogger _logger;
@@ -16,14 +14,12 @@ namespace Uspeak.Controllers
             _logger = logger;
         }
 
-        [HttpPost("CreateQuestion/{draft:json}")]
         public async Task<QuestionSettings> CreateQuestion(QuestionSettings draft)
         {
             await Task.Delay(200);
             return draft;
         }
 
-        [HttpGet("CreateQuestion")]
         public QuestionSettings CreateQuestion()
         {
             //_logger.Trace("Запрос создания шаблона вопроса");
