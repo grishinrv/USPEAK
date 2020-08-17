@@ -7,6 +7,8 @@ using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class TagsController : ControllerBase
     {
         private readonly ITagRepository _tagRepository;
@@ -21,6 +23,7 @@ namespace Uspeak.Controllers
         /// <summary>
         /// Получить список предметов, имеющих активные опубликованные курсы.
         /// </summary>
+        [HttpGet]
         public async Task<IEnumerable<Tag>> GetSubjects() 
         {
             //_logger.Trace("Запрос получения списков предметов");

@@ -44,7 +44,7 @@ export class Subjects extends Component {
   //  let response = await fetch('/api/Tags/GetSubjects');
   //  const data = await response.json();
   //  this.setState({ subjects: data, loading: false });
-    fetch('/Tags/GetSubjects')
+    fetch('Tags')
       .then(function(response) {                      // first then()
           return response.text();
       })
