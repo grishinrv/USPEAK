@@ -28,20 +28,21 @@ namespace Uspeak
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddSingleton<Infrastructure.IConfigurationProvider>(x => 
-                new Infrastructure.ConfigurationProvider( Configuration));
-            services.AddSingleton<IContextFactory>( x => 
-                new ContextFactory(Configuration.GetConnectionString("UspeakDatabase")));
-            services.AddSingleton<IEntityRepository, EntityRepository>();
-            services.AddSingleton<ITagRepository, TagRepository>();
-            services.AddSingleton<ICourseRepository, CourseRepository>();
-            services.AddSingleton<ILogger, Infrastructure.Logger>();
+            services.AddControllersWithViews();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddSingleton<Infrastructure.IConfigurationProvider>(x =>
+                new Infrastructure.ConfigurationProvider(Configuration));
+            services.AddSingleton<IContextFactory>(x =>
+               new ContextFactory(Configuration.GetConnectionString("UspeakDatabase")));
+            services.AddSingleton<IEntityRepository, EntityRepository>();
+            services.AddSingleton<ITagRepository, TagRepository>();
+            services.AddSingleton<ICourseRepository, CourseRepository>();
+            services.AddSingleton<ILogger, Infrastructure.Logger>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +54,7 @@ namespace Uspeak
             }
             else
             {
-                app.UseExceptionHandler("/error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }

@@ -16,14 +16,9 @@ export class Subjects extends Component {
   static renderSubjects(subjects) {
     return (
       <div className="flexlist">
-        <div className="flexitem eng"/>
-        <div className="flexitem eng"/>
-        <div className="flexitem"/>
-        <div className="flexitem"/>
-        <div className="flexitem"/>
-        <div className="flexitem"/>
-        <div className="flexitem"/>
-        <div className="flexitem"/>
+        {subjects.map(subject =>
+          <div key={subject.Id} className={['flexItem', subject.CssClass].join(" ")}  />
+        )}
       </div>
     );
   }
@@ -41,18 +36,16 @@ export class Subjects extends Component {
   }
 
   async getSubjects() {
-  //  let response = await fetch('/api/Tags/GetSubjects');
-  //  const data = await response.json();
-  //  this.setState({ subjects: data, loading: false });
-    fetch('Tags')
-      .then(function(response) {                      // first then()
-          return response.text();
-      })
-      .then(function(text) {                          // second then()
-        console.log(text);
-      })
-      .catch(function(error) {                        // catch
-        console.log('Request failed', error);
-      });
+    const myHeaders = new Headers();
+    myHeaders.append('pragma', 'no-cache');
+    myHeaders.append('cache-control', 'no-cache');
+
+    const httpConf = {
+      method: 'GET',
+      headers: myHeaders,
+    };
+    const response = await fetch('tags/subjects', httpConf);
+    const data = await response.json();
+    this.setState({ subjects: data, loading: false });
   }
 }
