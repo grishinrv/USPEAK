@@ -44,7 +44,7 @@ export class Subjects extends Component {
       method: 'GET',
       headers: myHeaders,
     };
-    const response = await fetch('tags/subjects', httpConf);
+    const response = await fetch('tags', httpConf);
     const data = await response.json();
     this.setState({ subjects: data, loading: false });
   }

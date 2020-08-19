@@ -7,6 +7,8 @@ using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CoursesController : ControllerBase
     {
         private readonly ICourseRepository _courseRepository;
