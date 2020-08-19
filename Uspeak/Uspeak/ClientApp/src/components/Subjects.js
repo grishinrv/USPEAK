@@ -36,15 +36,7 @@ export class Subjects extends Component {
   }
 
   async getSubjects() {
-    const myHeaders = new Headers();
-    myHeaders.append('pragma', 'no-cache');
-    myHeaders.append('cache-control', 'no-cache');
-
-    const httpConf = {
-      method: 'GET',
-      headers: myHeaders,
-    };
-    const response = await fetch('tags', httpConf);
+    const response = await fetch('tags');
     const data = await response.json();
     this.setState({ subjects: data, loading: false });
   }
