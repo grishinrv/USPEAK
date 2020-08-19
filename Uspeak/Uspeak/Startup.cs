@@ -11,6 +11,7 @@ using NLog;
 using System;
 using System.IO;
 using Uspeak.Infrastructure;
+using Uspeak.Infrastructure.Middleware;
 using Uspeak.Persistence;
 using Uspeak.Services;
 
@@ -28,7 +29,7 @@ namespace Uspeak
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -43,27 +44,24 @@ namespace Uspeak
             services.AddSingleton<ITagRepository, TagRepository>();
             services.AddSingleton<ICourseRepository, CourseRepository>();
             services.AddSingleton<ILogger, Infrastructure.Logger>();
+            services.AddTransient<IUspeakDbContext, UspeakDbContext>(); //только для первичного создания БД через Update-Database
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseExceptionHandler("/Error");
+            if (!env.IsDevelopment())
                 app.UseHsts();
-            }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+            app.UseMiddleware<RequestLogger>();
 
             app.UseEndpoints(endpoints =>
             {
@@ -71,7 +69,6 @@ namespace Uspeak
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
-
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";
