@@ -14,7 +14,7 @@ namespace Uspeak.Persistence
 {
     public class UspeakDbContext : DbContext, IUspeakDbContext
     {
-        public UspeakDbContext([NotNull] DbContextOptions options) : base(options)
+        public UspeakDbContext(DbContextOptions<UspeakDbContext> options) : base(options)
         {
         }
 

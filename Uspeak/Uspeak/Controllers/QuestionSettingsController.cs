@@ -22,6 +22,7 @@ namespace Uspeak.Controllers
             return draft;
         }
 
+        [HttpGet("Create")]
         public QuestionSettings CreateQuestion()
         {
             //_logger.Trace("Запрос создания шаблона вопроса");

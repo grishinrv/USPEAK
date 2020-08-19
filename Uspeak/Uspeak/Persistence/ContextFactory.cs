@@ -4,7 +4,7 @@ namespace Uspeak.Persistence
 {
     public class ContextFactory : IContextFactory
     {
-        private readonly DbContextOptionsBuilder _optionsBuilder;
+        private readonly DbContextOptionsBuilder<UspeakDbContext> _optionsBuilder;
 
         public ContextFactory(string connectionString)
         { 

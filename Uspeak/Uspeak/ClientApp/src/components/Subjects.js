@@ -36,7 +36,7 @@ export class Subjects extends Component {
   }
 
   async getSubjects() {
-    const response = await fetch('tags');
+    const response = await fetch('Tags/Subjects');
     const data = await response.json();
     this.setState({ subjects: data, loading: false });
   }

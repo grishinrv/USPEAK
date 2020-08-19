@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
+import { Subjects } from './components/Subjects';
 import { QuestionTemplate } from './components/QuestionTemplate';
 
 import './custom.css'
-import {Subjects} from "./components/Subjects";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -14,8 +14,8 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/Subjects' component={Subjects} />
-        <Route path='/QuestionTemplate' component={QuestionTemplate} />
+        <Route path='/subject-s' component={Subjects} />
+        <Route path='/question-template' component={QuestionTemplate} />
       </Layout>
     );
   }
