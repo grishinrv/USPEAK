@@ -7,7 +7,7 @@ using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CoursesController : ControllerBase
     {

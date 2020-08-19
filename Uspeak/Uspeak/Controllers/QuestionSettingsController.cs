@@ -5,7 +5,7 @@ using Uspeak.Data.Models.Tests;
 
 namespace Uspeak.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class QuestionSettingsController : ControllerBase
     {
