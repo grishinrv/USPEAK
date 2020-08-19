@@ -1,0 +1,9 @@
+﻿USE [master]
+GO
+CREATE LOGIN [UspeakTech] WITH PASSWORD=N'UspeakTech', 
+                 DEFAULT_DATABASE=[Uspeak], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE [Uspeak]
+GO
+CREATE USER [UspeakTech] FOR LOGIN [UspeakTech] WITH DEFAULT_SCHEMA=[dbo]
+GO
