@@ -1,4 +1,4 @@
-.flexlist {
+.flexList {
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
@@ -8,7 +8,7 @@
     height: auto;
 }
 
-.flexitem {
+.flexItem {
     margin: 1px;
     border-color: #4e555b;
     border-style: ridge;

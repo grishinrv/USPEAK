@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Common.css';
+import '../styles/flex.module.css';
 
 export class Subjects extends Component {
   static displayName = Subjects.name;
@@ -14,11 +14,12 @@ export class Subjects extends Component {
   }
 
   static renderSubjects(subjects) {
+    const items = subjects.map(subject =>
+      <div key={'key_'+subject.id} className={['flexItem', subject.cssClass].join(", ")}  />
+    );
     return (
-      <div className="flexlist">
-        {subjects.map(subject =>
-          <div key={subject.id} className={['flexItem', subject.cssClass].join(" ")}  />
-        )}
+      <div className="flexList">
+        {items}
       </div>
     );
   }
