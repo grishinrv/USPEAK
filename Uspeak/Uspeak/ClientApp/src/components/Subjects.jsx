@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/flex.module.css';
+import flexStyle from '../styles/flex.module.css';
 
 export class Subjects extends Component {
   static displayName = Subjects.name;
@@ -15,10 +15,10 @@ export class Subjects extends Component {
 
   static renderSubjects(subjects) {
     const items = subjects.map(subject =>
-      <div key={'key_'+subject.id} className={['flexItem', subject.cssClass].join(", ")}  />
+      <div key={'key_'+subject.id} className={[flexStyle.flexItem, subject.cssClass].join(" ")}  />
     );
     return (
-      <div className="flexList">
+      <div className={flexStyle.flexList}>
         {items}
       </div>
     );

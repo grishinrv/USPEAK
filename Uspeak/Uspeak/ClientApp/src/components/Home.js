@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Common.css';
+import '../styles/flex.module.css';
 import {Subjects} from "./Subjects";
 
 export class Home extends Component {
