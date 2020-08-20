@@ -17,7 +17,7 @@ export class Subjects extends Component {
     return (
       <div className="flexlist">
         {subjects.map(subject =>
-          <div key={subject.Id} className={['flexItem', subject.CssClass].join(" ")}  />
+          <div key={subject.id} className={['flexItem', subject.cssClass].join(" ")}  />
         )}
       </div>
     );

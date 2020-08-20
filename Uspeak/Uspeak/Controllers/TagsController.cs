@@ -21,18 +21,10 @@ namespace Uspeak.Controllers
 
         /// <summary>
         /// Получить список предметов, имеющих активные опубликованные курсы.
-        /// GET: api/Tags
+        /// GET: Tags/Subjects
         /// </summary>
-        [HttpGet]
-        public async Task<IEnumerable<Tag>> GetSubjects() 
-        {
-            //_logger.Trace("Запрос получения списков предметов");
-            var result = await _tagRepository.GetTags(TagType.StudySubject, EntityType.Course, EntityStatus.Published);
-            return result;
-        }
-
         [HttpGet("Subjects")]
-        public async Task<IEnumerable<Tag>> GetSuubs()
+        public async Task<IEnumerable<Tag>> GetSubjects() 
         {
             //_logger.Trace("Запрос получения списков предметов");
             var result = await _tagRepository.GetTags(TagType.StudySubject, EntityType.Course, EntityStatus.Published);
