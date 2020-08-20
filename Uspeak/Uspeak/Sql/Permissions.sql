@@ -21,3 +21,18 @@ GRANT SELECT ON "dbo"."Courses" TO [UspeakTech];
 GRANT SELECT ON "dbo"."Entities" TO [UspeakTech];
 GRANT SELECT ON "dbo"."Config" TO [UspeakTech];
 GRANT SELECT ON "dbo"."AnswerOption" TO [UspeakTech];
+
+
+
+ALTER LOGIN UspeakTech ENABLE ;
+GO
+ALTER LOGIN UspeakTech WITH PASSWORD = 'UspeakTech' ;
+GO
+
+
+USE [Uspeak]
+GO
+EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE',
+     N'Software\Microsoft\MSSQLServer\MSSQLServer',
+     N'LoginMode', REG_DWORD, 1
+GO
