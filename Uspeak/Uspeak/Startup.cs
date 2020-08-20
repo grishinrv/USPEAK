@@ -44,7 +44,7 @@ namespace Uspeak
             services.AddSingleton<ITagRepository, TagRepository>();
             services.AddSingleton<ICourseRepository, CourseRepository>();
             services.AddSingleton<ILogger, Infrastructure.Logger>();
-            services.AddTransient<IUspeakDbContext, UspeakDbContext>(); //только для первичного создания БД через Update-Database
+            services.AddDbContext<UspeakDbContext>(); //только для первичного создания БД через Update-Database
 
         }
 
