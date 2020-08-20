@@ -10,7 +10,7 @@ namespace Uspeak.Infrastructure
     /// <summary>
     /// Временный логгер, чтобы не тратить время сейчас на конфигурирование для asp net core. todo
     /// </summary>
-    public class Logger : ILogger
+    public class Logger : NLog.ILogger, Microsoft.Extensions.Logging.ILogger
     {
         public Logger(IWebHostEnvironment env)
         {
@@ -1600,6 +1600,21 @@ namespace Uspeak.Infrastructure
         public void WarnException([Localizable(false)] string message, Exception exception)
         {
             throw new NotImplementedException();
+        }
+
+        public void Log<TState>(Microsoft.Extensions.Logging.LogLevel logLevel, Microsoft.Extensions.Logging.EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+        {
+            Write(formatter(state, exception), logLevel.ToString());
+        }
+
+        public bool IsEnabled(Microsoft.Extensions.Logging.LogLevel logLevel)
+        {
+            return true;
+        }
+
+        public IDisposable BeginScope<TState>(TState state)
+        {
+            return null;
         }
     }
 }

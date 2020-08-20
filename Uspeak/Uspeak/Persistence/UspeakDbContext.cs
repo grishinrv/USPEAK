@@ -1,14 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Security.Cryptography.X509Certificates;
 using Uspeak.Data.Models;
 using Uspeak.Data.Models.Courses;
 using Uspeak.Data.Models.Infrastructure;
-using Uspeak.Data.Models.Study;
-using Uspeak.Data.Models.Tests;
-using Uspeak.Data.Models.Users;
+using Uspeak.Infrastructure;
 
 namespace Uspeak.Persistence
 {
@@ -29,7 +26,13 @@ namespace Uspeak.Persistence
                 .AddJsonFile("appsettings.json")
                 .Build();
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("UspeakDatabase"));
+            optionsBuilder.UseLoggerFactory(LoggerFactoryMethod);
         }
+
+        public static readonly ILoggerFactory LoggerFactoryMethod = LoggerFactory.Create(builder =>
+        {
+            builder.AddProvider(new SqlQueryLoggerProvider()); 
+        });
 
         protected sealed override void OnModelCreating(ModelBuilder modelBuilder)
         {
