@@ -11,7 +11,7 @@ const flagStyle = createUseStyles({
     position: 'relative',
     '&:before': {
       position: 'absolute',
-      content: "",
+      content: '""',
       top: 0,
       left: 0,
       background: 'linear-gradient(180deg,transparent 40%, #cc142b 0,#cc142b 60%,transparent 0),\n' +
