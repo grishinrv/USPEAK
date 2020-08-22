@@ -28,11 +28,24 @@ const flagStyle = createUseStyles({
       height: '100%',
       'background-repeat': 'no-repeat'
     }
-  }})
+  },
+  de: {
+    width: '100%',
+    height: '100%'
+  }
+});
+
+const subjectRender = (subject) => {
+  const classes = flagStyle();
+  return (
+    <div key={'key_'+subject.id} className={[flexStyle.flexItem, classes.eng].join(" ")}  />
+  )
+}
 
 export class Subjects extends Component {
   static displayName = Subjects.name;
 
+  static classes = flagStyle();
   constructor(props) {
     super(props);
     this.state = { subjects: [], loading: true };
@@ -48,7 +61,7 @@ export class Subjects extends Component {
 
   static renderSubjects(subjects) {
     const items = subjects.map(subject =>
-      <div key={'key_'+subject.id} className={[flexStyle.flexItem, flagStyle.eng].join(" ")}  />
+      subjectRender(subject)
     );
     return (
       <div className={flexStyle.flexList}>
