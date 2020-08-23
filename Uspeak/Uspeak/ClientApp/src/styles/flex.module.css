@@ -17,6 +17,15 @@
     height: 10vw;
 }
 
+.flagContent {
+    position: absolute;
+    height: 90%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (min-width: 768px) {
     flexItem {
         width: 98vw;
@@ -27,4 +36,63 @@
 .flexItem:hover{
     border-color: darkred;
     border-width: medium;
+}
+
+.de {
+    background-color: #000000;
+    background-size: 100%;
+
+    position: relative;
+}
+.de:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg,transparent 34%, #ff0000, 0, #ff0000 67%, transparent 0),
+                linear-gradient(180deg,transparent 67%, #ffd700, 0, #ffd700 100%, transparent 0);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.fr {
+    background-color: #0000ff;
+    background-size: 100%;
+
+    position: relative;
+}
+.fr:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,transparent 34%, #ffffff, 0, #ffffff 67%, transparent 0),
+                linear-gradient(90deg,transparent 67%, #ff0000, 0, #ff0000 100%, transparent 0);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.it {
+    background-color: #228b22;
+    background-size: 100%;
+
+    position: relative;
+}
+.it:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,transparent 34%, #ffffff, 0, #ffffff 67%, transparent 0),
+                linear-gradient(90deg,transparent 67%, #ff0000, 0, #ff0000 100%, transparent 0);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.ch {
+    background-color: #ff0000;
+    background-size: 100%;
 }
