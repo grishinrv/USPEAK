@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import flexStyle from '../styles/flex.module.css';
+import text from '../styles/text.css'; //шрифты заголовков
 import FlagStyle from "./FlagStyle";
 
 export default function Subjects(){

@@ -24,6 +24,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    line-height: 10%;
 }
 
 @media (min-width: 768px) {
