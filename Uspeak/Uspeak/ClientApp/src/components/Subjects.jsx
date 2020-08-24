@@ -23,7 +23,7 @@ export default function Subjects(){
       const sujName = subject.name;
       return (
         <div key={'key_'+subject.id} className={flexStyle.flexItem} >
-          <Link to={`/courses/${subject.id}`}>
+          <Link to={`/courses/${subject.id}`} name={subject.name}>
             <Flag cssClass={subject.cssClass}>
               <div className={[flexStyle.flagContent]}>
                 <h2>{subject.name}</h2>

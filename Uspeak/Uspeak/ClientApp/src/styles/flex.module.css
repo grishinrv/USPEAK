@@ -17,6 +17,13 @@
     height: 10vw;
 }
 
+.flexItemFullWidth {
+     margin-top: 5px;
+     margin-bottom: 5px;
+     width: 100%;
+     height: auto;
+ }
+
 .flagContent {
     position: absolute;
     height: 90%;
