@@ -19,7 +19,7 @@ export default function  Courses (props) {
     getCourses(props.match.params.subjectId);
   }, []);
 
-  let contents = this.state.loading
+  let contents = loading
     ? <p><em>Loading...</em></p>
     : <div/>
   return (
