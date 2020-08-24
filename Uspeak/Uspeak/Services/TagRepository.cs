@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,15 @@ namespace Uspeak.Services
                     .Where(x=> x.EnityKind == entityType && x.Status == status)
                     .SelectMany<Entity, Tag>(t => t.EntityTags.Select(e => e.Tag).Where(a =>a.TagKind == tagType))
                     .Distinct()
+                    .ToListAsync();
+            }
+        }
+
+        public async Task<List<Tag>> GetTags(Guid entityId)
+        {
+            using (var context = _contextFactory.Create())
+            {
+                return await context.Tags.Where(x=> x.EntityTags.All(e => e.EntityId == entityId))
                     .ToListAsync();
             }
         }
