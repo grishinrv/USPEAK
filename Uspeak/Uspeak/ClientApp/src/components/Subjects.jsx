@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import flexStyle from '../styles/flex.module.css';
 import text from '../styles/text.css'; //шрифты заголовков
-import FlagStyle from "./FlagStyle";
+import Flag from "./Flag";
 
 export default function Subjects(){
-  const classes = FlagStyle();
   const [subjects, setSubjects] =  useState([]);
   const [loading, setLoading] =  useState(true);
 
@@ -20,18 +19,20 @@ export default function Subjects(){
   }, []);
 
   function renderSubject(subject, classes) {
-    return (
-      <div key={'key_'+subject.id} className={[flexStyle.flexItem, flexStyle.it].join(" ")}  >
-        <div className={[flexStyle.flagContent]}>
-          <h2>{subject.name}</h2>
+      return (
+        <div key={'key_'+subject.id} className={flexStyle.flexItem} >
+          <Flag cssClass={subject.cssClass}>
+            <div className={[flexStyle.flagContent]}>
+              <h2>{subject.name}</h2>
+            </div>
+          </Flag>
         </div>
-      </div>
-    )
+      );
   }
 
-  function renderSubjects(subjects, classes) {
+  function renderSubjects(subjects) {
     const items = subjects.map(subject =>
-      renderSubject(subject, classes)
+      renderSubject(subject)
     );
     return (
       <div className={flexStyle.flexList}>
@@ -42,7 +43,7 @@ export default function Subjects(){
 
   let contents = loading
     ? <p><em>Loading...</em></p>
-    : renderSubjects(subjects, classes);
+    : renderSubjects(subjects);
   return (
     <div>
       <h1 style={{"textAlign": "center"}}>Направления обучения</h1>

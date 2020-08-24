@@ -1,18 +1,26 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
 
-const classes = createUseStyles({
-  eng: {
-    background: {
-      color: '#00247d',
-      size: '100%'
-    },
+const useStyles = createUseStyles({
+  stdFlag :{
+    width: '100%',
+    height: '100%',
+    'background-size':'100%',
     position: 'relative',
     '&:before': {
       position: 'absolute',
       content: '""',
       top: 0,
       left: 0,
+      width: '100%',
+      height: '100%',
+      'background-repeat': 'no-repeat'
+
+    }
+  },
+  eng: {
+    'background-color':'#00247d',
+    '&:before': {
       background: 'linear-gradient(180deg,transparent 40%, #cc142b 0,#cc142b 60%,transparent 0),\n' +
         '  linear-gradient(90deg,transparent 45%,#cc142b 0,#cc142b 55%,transparent 0),\n' +
         '  linear-gradient(180deg,transparent 35%,#fff 0,#fff 65%,transparent 0),\n' +
@@ -22,64 +30,28 @@ const classes = createUseStyles({
         '  linear-gradient(34deg,transparent 50%,#cc142b 0,#cc142b 53%,transparent 0) -75% -43%,\n' +
         '  linear-gradient(34deg,transparent 50%,#cc142b 0,#cc142b 53%,transparent 0) 70% 46%,\n' +
         '  linear-gradient(146deg,transparent 45%,#fff 0,#fff 55%,transparent 0),\n' +
-        '  linear-gradient(34deg,transparent 45%,#fff 0,#fff 55%,transparent 0)',
-      width: '100%',
-      height: '100%',
-      'background-repeat': 'no-repeat'
+        '  linear-gradient(34deg,transparent 45%,#fff 0,#fff 55%,transparent 0)'
     }
   },
   de: {
-    background: {
-      color: '#000000',
-      size: '100%'
-    },
-    position: 'relative',
+    'background-color':'#000000',
     '&:before': {
-      position: 'absolute',
-      content: '""',
-      top: 0,
-      left: 0,
       background: 'linear-gradient(180deg,transparent 34%, #ff0000, 0, #ff0000 67%, transparent 0),\n' +
-        'linear-gradient(180deg,transparent 67%, #ffd700, 0, #ffd700 100%, transparent 0)',
-      width: '100%',
-      height: '100%',
-      'background-repeat': 'no-repeat'
+        'linear-gradient(180deg,transparent 67%, #ffd700, 0, #ffd700 100%, transparent 0)'
     },
   },
   fr: {
-    background: {
-      color: '#0000ff',
-      size: '100%'
-    },
-    position: 'relative',
+    'background-color':'#0000ff',
     '&:before': {
-      position: 'absolute',
-      content: '""',
-      top: 0,
-      left: 0,
       background: 'linear-gradient(90deg,transparent 34%, #ffffff, 0, #ffffff 67%, transparent 0),\n' +
-                  'linear-gradient(90deg,transparent 67%, #ff0000, 0, #ff0000 100%, transparent 0)',
-      width: '100%',
-      height: '100%',
-      'background-repeat': 'no-repeat'
+        'linear-gradient(90deg,transparent 67%, #ff0000, 0, #ff0000 100%, transparent 0)'
     },
   },
   it: {
-    background: {
-      color: '#228b22',
-      size: '100%'
-    },
-    position: 'relative',
+    'background-color':'#228b22',
     '&:before': {
-      position: 'absolute',
-      content: '""',
-      top: 0,
-      left: 0,
       background: 'linear-gradient(90deg,transparent 34%, #ffffff, 0, #ffffff 67%, transparent 0),\n' +
-                  'linear-gradient(90deg,transparent 67%, #ff0000, 0, #ff0000 100%, transparent 0)',
-      width: '100%',
-      height: '100%',
-      'background-repeat': 'no-repeat'
+        'linear-gradient(90deg,transparent 67%, #ff0000, 0, #ff0000 100%, transparent 0)'
     },
   },
   ch: {
@@ -143,6 +115,18 @@ const classes = createUseStyles({
   }
 });
 
-export default function Flag(country) {
-
+export default function Flag(props) {
+  const classes = useStyles();
+  const classesMap = {
+    'eng': [classes.stdFlag, classes.eng].join(" "),
+    'de': [classes.stdFlag, classes.de].join(" "),
+    'fr': [classes.stdFlag, classes.fr].join(" "),
+    'it': [classes.stdFlag, classes.it].join(" "),
+    'ch': [classes.stdFlag, classes.ch].join(" ")
+  }
+  return (
+    <div className={classesMap[props.cssClass]}>
+      {props.children}
+    </div>
+  );
 }
