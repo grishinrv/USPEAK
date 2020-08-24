@@ -16,12 +16,12 @@ export default function  Courses (props) {
   }
 
   useEffect(() => {
-    getCourses(props.subjectId);
+    getCourses(props.match.params.subjectId);
   }, []);
 
   let contents = this.state.loading
     ? <p><em>Loading...</em></p>
-    : Courses.renderSubjects(this.state.subjects);
+    : <div/>
   return (
     <div>
       <h1 style={{"textAlign": "center"}}>this.state.header</h1>

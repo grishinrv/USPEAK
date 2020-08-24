@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import flexStyle from '../styles/flex.module.css';
 import text from '../styles/text.css'; //шрифты заголовков
 import Flag from "./Flag";
+import {Link} from "react-router-dom";
 
 export default function Subjects(){
   const [subjects, setSubjects] =  useState([]);
@@ -19,13 +20,16 @@ export default function Subjects(){
   }, []);
 
   function renderSubject(subject, classes) {
+      const sujName = subject.name;
       return (
         <div key={'key_'+subject.id} className={flexStyle.flexItem} >
-          <Flag cssClass={subject.cssClass}>
-            <div className={[flexStyle.flagContent]}>
-              <h2>{subject.name}</h2>
-            </div>
-          </Flag>
+          <Link to={`/courses/${subject.id}`}>
+            <Flag cssClass={subject.cssClass}>
+              <div className={[flexStyle.flagContent]}>
+                {subject.name}
+              </div>
+            </Flag>
+          </Link>
         </div>
       );
   }
