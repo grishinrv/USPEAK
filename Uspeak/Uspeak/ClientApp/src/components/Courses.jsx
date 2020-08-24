@@ -6,10 +6,8 @@ export default function  Courses (props) {
   const [loading, setLoading] =  useState(true);
 
   async function getCourses(subjectId) {
-    var url = new URL('Courses'),
-        params = {'subjectId':subjectId.toString()};
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-    const response = await fetch(url);
+    const param = subjectId.toString();
+    const response = await fetch(`courses?subjectId=${encodeURIComponent(param)}`);
     const data = await response.json();
     setCourses(data);
     setLoading(false);
