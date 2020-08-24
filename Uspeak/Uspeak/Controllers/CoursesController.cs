@@ -18,7 +18,7 @@ namespace Uspeak.Controllers
             _courseRepository = courseRepository;
         }
 
-        [HttpGet("{subjectId}")]
+        [HttpGet("Get/{subjectId}")]
         public async Task<List<Course>> GetCourses(Guid subjectId)
         { 
             return await _courseRepository.GetCoursesByTagId(subjectId);
