@@ -7,8 +7,7 @@ using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
+    [Route("api/Courses")]
     public class CoursesController : ControllerBase
     {
         private readonly ICourseRepository _courseRepository;
@@ -18,10 +17,10 @@ namespace Uspeak.Controllers
             _courseRepository = courseRepository;
         }
 
-        [HttpGet("Get/{subjectId}")]
-        public async Task<List<Course>> GetCourses(Guid subjectId)
-        { 
-            return await _courseRepository.GetCoursesByTagId(subjectId);
+        [HttpGet("BySubject/{id}")]
+        public async Task<List<Course>> GetBySubject(string id)
+        {
+            return await _courseRepository.GetCoursesByTagId(Guid.Parse(id));
         } 
     }
 }

@@ -9,7 +9,7 @@ export default function Subjects(){
   const [loading, setLoading] =  useState(true);
 
   async function getSubjects() {
-    const response = await fetch('Tags/Subjects');
+    const response = await fetch('api/Tags/Subjects');
     const data = await response.json();
     setSubjects(data);
     setLoading(false);

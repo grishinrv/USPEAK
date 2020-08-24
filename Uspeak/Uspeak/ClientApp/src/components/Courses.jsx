@@ -7,7 +7,7 @@ export default function  Courses (props) {
 
   async function getCourses(subjectId) {
     const param = subjectId.toString();
-    const response = await fetch(`Courses/Get?subjectId=${encodeURIComponent(param)}`);
+    const response = await fetch(`api/Courses/BySubject/${encodeURIComponent(param)}`);
     const data = await response.json();
     setCourses(data);
     setLoading(false);

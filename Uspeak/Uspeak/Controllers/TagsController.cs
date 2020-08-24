@@ -6,8 +6,7 @@ using Uspeak.Services;
 
 namespace Uspeak.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
+    [Route("api/Tags")]
     public class TagsController : ControllerBase
     {
         private readonly ITagRepository _tagRepository;
