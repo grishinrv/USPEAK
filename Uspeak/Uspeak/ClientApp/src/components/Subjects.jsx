@@ -26,7 +26,7 @@ export default function Subjects(){
           <Link to={`/courses/${subject.id}`}>
             <Flag cssClass={subject.cssClass}>
               <div className={[flexStyle.flagContent]}>
-                {subject.name}
+                <h2>{subject.name}</h2>
               </div>
             </Flag>
           </Link>
