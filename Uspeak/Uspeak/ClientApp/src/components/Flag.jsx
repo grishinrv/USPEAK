@@ -1,5 +1,7 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
+import FunctionsSharpIcon from '@material-ui/icons/FunctionsSharp';
+import flexStyle from '../styles/flex.module.css';
 
 const useStyles = createUseStyles({
   stdFlag :{
@@ -112,6 +114,19 @@ const useStyles = createUseStyles({
     '-webkit-transform':'rotate(35deg)	scale(0.45,.45)',
     '-ms-transform':'rotate(35deg) scale(0.45,.45)',
     '-o-transform':'rotate(35deg) scale(0.45,.45)'
+  },
+  math: {
+    'background-color':'#def',
+    'background-image': 'radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),\n' +
+    'radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%)',
+    'background-size':'80px 80px',
+    'background-position':'0 0, 40px 40px'
+  },
+  physics:{
+    background: 'radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),\n' +
+                'radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px',
+    'background-color':'slategray',
+    'background-size':'75px 100px'
   }
 });
 
@@ -122,11 +137,31 @@ export default function Flag(props) {
     'de': [classes.stdFlag, classes.de].join(" "),
     'fr': [classes.stdFlag, classes.fr].join(" "),
     'it': [classes.stdFlag, classes.it].join(" "),
-    'ch': [classes.stdFlag, classes.ch].join(" ")
+    'ch': [classes.stdFlag, classes.ch].join(" "),
+    'math': [classes.stdFlag, classes.math].join(" "),
+    'physics': [classes.stdFlag, classes.physics].join(" ")
   }
-  return (
-    <div className={classesMap[props.cssClass]}>
-      {props.children}
-    </div>
-  );
+
+  function getTemplate(subjectCssClass)
+  {
+    if (subjectCssClass === 'ch')
+    {
+      return (
+        <div className={classesMap[subjectCssClass]}>
+          <div className={[classes.star, classes.starMain].join(" ")}/>
+          {props.children}
+        </div>
+      );
+    }
+    else
+    {
+      return (
+        <div className={classesMap[subjectCssClass]}>
+          {props.children}
+        </div>
+      );
+    }
+  }
+
+  return ( getTemplate(props.cssClass) );
 }
