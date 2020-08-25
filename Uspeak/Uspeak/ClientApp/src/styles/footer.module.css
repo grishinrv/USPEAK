@@ -1,0 +1,31 @@
+.footer {
+    position:absolute;
+    bottom: 30px;
+    height: auto;
+    border-top: 1px solid #dee2e6 !important;
+    margin-top: 1rem !important;
+    width: 100%;
+    padding-right: 15vw;
+    padding-left: 16vw;
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.footerItem {
+    width: auto;
+    height: 10px;
+    align-self: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+}
