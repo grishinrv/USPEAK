@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import flexStyle from '../styles/flex.module.css';
+import courseStyle from '../styles/course.module.css';
 import Tag from "./Tag";
 
 export default function Course (props) {
@@ -15,7 +16,7 @@ export default function Course (props) {
 
   useEffect(() => {
     getTags(props.course.id);
-  }, []);
+  }, [props.course.id]);
 
   function renderTag(tag) {
     return (<Tag key={'key_'+tag.id}  tag={tag} />);
@@ -35,7 +36,7 @@ export default function Course (props) {
     ? <p><em>Loading...</em></p>
     : renderTags(tags)
   return (
-    <div className={flexStyle.flexItemFullWidth}>
+    <div className={[flexStyle.flexItemDefaultWidth, courseStyle.course].join(" ")}>
       <h2 style={{"textAlign": "center"}}>{props.course.name}</h2>
       {contents}
       <p>{props.course.description}</p>

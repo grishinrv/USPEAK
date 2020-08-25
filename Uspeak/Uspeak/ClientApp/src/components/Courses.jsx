@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import flexStyle from "../styles/flex.module.css";
+import courseStyle from "../styles/courses.module.css";
 import Course from "./Course";
 
 export default function  Courses (props) {
@@ -15,7 +16,7 @@ export default function  Courses (props) {
 
   useEffect(() => {
     getCourses(props.match.params.subjectId);
-  }, []);
+  }, [props.match.params.subjectId]);
 
   function renderCourse(course) {
     return (<Course key={'key_'+course.id}  course={course} />);
@@ -36,7 +37,7 @@ export default function  Courses (props) {
     ? <p><em>Loading...</em></p>
     : renderCourses(courses)
   return (
-    <div>
+    <div className={courseStyle.courses}>
       <h1 style={{"textAlign": "center"}}>{props.name}</h1>
       {contents}
     </div>

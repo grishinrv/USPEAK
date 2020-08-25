@@ -17,10 +17,9 @@
     height: 10vw;
 }
 
-.flexItemFullWidth {
+.flexItemDefaultWidth {
      margin-top: 2vh;
      margin-bottom: 2vh;
-     width: 100%;
      height: auto;
  }
 
