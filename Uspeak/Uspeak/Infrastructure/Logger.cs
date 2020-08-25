@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Uspeak.Infrastructure
@@ -13,8 +14,8 @@ namespace Uspeak.Infrastructure
     {
         public Logger()
         {
-            var exePath = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
-            var folderPath = Path.GetFullPath(exePath) + @"\logs";
+            var exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var folderPath = exePath + @"\logs";
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
             _path = folderPath + @"\Log.txt";
