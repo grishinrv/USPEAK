@@ -12,12 +12,15 @@ namespace Uspeak.Infrastructure
     /// </summary>
     public class Logger : NLog.ILogger, Microsoft.Extensions.Logging.ILogger
     {
-        public Logger(IWebHostEnvironment env)
+        public Logger()
         {
-            //var logFolderPath = env.WebRootPath + "\\Logs";
-            //if (!Directory.Exists(logFolderPath))
-            //    Directory.CreateDirectory(logFolderPath);
-            _path =  @"C:\inetpub\wwwroot\Uspeak\Logs\Log.txt";
+            var exePath = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+            var folderPath = Path.GetFullPath(exePath) + @"\logs";
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+            _path = folderPath + @"\Log.txt";
+            if (!File.Exists(_path))
+                File.Create(_path);
         }
         private readonly string _path;
         private void Write(string message, string level = "Debug")
