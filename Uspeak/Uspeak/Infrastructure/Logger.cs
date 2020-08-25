@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using NLog;
+﻿using NLog;
 using System;
 using System.ComponentModel;
 using System.IO;

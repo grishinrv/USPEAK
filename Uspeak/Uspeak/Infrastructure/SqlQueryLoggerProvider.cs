@@ -6,7 +6,7 @@ namespace Uspeak.Infrastructure
     {
         public ILogger CreateLogger(string categoryName)
         {
-            return new Logger(null);//todo
+            return new Logger();//todo
         }
 
         public void Dispose()
