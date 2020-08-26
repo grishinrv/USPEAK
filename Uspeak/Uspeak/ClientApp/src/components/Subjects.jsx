@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import flexStyle from '../styles/flex.module.css';
-import text from '../styles/text.css'; //шрифты заголовков
+import textStyle from '../styles/text.css'; //шрифты заголовков
 import Flag from "./Flag";
 import {Link} from "react-router-dom";
-import subjectsStyle from '../styles/subjects.module.css'
 
 export default function Subjects(){
   const [subjects, setSubjects] =  useState([]);
@@ -49,8 +48,8 @@ export default function Subjects(){
     ? <p><em>Loading...</em></p>
     : renderSubjects(subjects);
   return (
-    <div className={subjectsStyle.subjects}>
-      <h2 style={{"textAlign": "center"}}>Направления обучения</h2>
+    <div className={flexStyle.contentScroll}>
+      <h2 className={textStyle.textCenter}>Направления обучения</h2>
       {contents}
     </div>
   );

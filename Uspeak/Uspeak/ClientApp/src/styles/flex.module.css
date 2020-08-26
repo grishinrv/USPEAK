@@ -46,11 +46,11 @@
 
 @media (orientation: portrait) and (max-width: 1080px) {
     .flexItem {
-        width: 90vw;
+        width: 100vw;
         height: 38vw;
     }
     .flexList {
-        width: 95vw;
+        width: 92vw;
     }
     .flagContent {
          height: 100%;
@@ -60,4 +60,35 @@
 .flexItem:hover{
     border-color: darkred;
     border-width: medium;
+}
+
+.contentScroll{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 83vh;
+    width: 79vw;
+}
+
+@media (orientation: portrait ) {
+    .contentScroll {
+        width: 95vw;
+    }
+}
+
+@media (orientation: landscape ) and (max-width: 1080px){
+    .contentScroll {
+        width: 95vw;
+    }
+}
+
+@media (orientation: portrait ) {
+    .contentScroll {
+        height: 75vh;
+    }
+}
+
+@media (orientation: landscape ) and (max-height: 18000px){
+    .contentScroll {
+        height: 65vh;
+    }
 }
