@@ -2,3 +2,9 @@
     width: 63vw;
     text-align: justify;
 }
+
+@media (max-width: 1080px) and (orientation: portrait ) {
+    .course {
+        width: 88vw;
+    }
+}

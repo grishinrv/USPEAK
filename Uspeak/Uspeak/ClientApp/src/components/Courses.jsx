@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import flexStyle from "../styles/flex.module.css";
+import textStyle from "../styles/text.css";
 import courseStyle from "../styles/courses.module.css";
 import Course from "./Course";
 
@@ -38,7 +39,7 @@ export default function  Courses (props) {
     : renderCourses(courses)
   return (
     <div className={courseStyle.courses}>
-      <h1 style={{"textAlign": "center"}}>{props.name}</h1>
+      <h2 className={textStyle.textCenter}>{props.name}</h2>
       {contents}
     </div>
   );

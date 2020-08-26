@@ -51,6 +51,12 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .flexList {
+        width: 95vw;
+    }
+}
+
 .flexItem:hover{
     border-color: darkred;
     border-width: medium;

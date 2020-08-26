@@ -11,3 +11,7 @@ h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #000000;
 }
+
+.textCenter {
+    text-align: center;
+}

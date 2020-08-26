@@ -37,7 +37,7 @@ export default function Course (props) {
     : renderTags(tags)
   return (
     <div className={[flexStyle.flexItemDefaultWidth, courseStyle.course].join(" ")}>
-      <h2 style={{"textAlign": "center"}}>{props.course.name}</h2>
+      <h3 style={{"textAlign": "center"}}>{props.course.name}</h3>
       {contents}
       <p>{props.course.description}</p>
     </div>

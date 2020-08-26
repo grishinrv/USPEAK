@@ -3,6 +3,7 @@ import flexStyle from '../styles/flex.module.css';
 import text from '../styles/text.css'; //шрифты заголовков
 import Flag from "./Flag";
 import {Link} from "react-router-dom";
+import subjectsStyle from '../styles/subjects.module.css'
 
 export default function Subjects(){
   const [subjects, setSubjects] =  useState([]);
@@ -19,14 +20,13 @@ export default function Subjects(){
     getSubjects();
   }, []);
 
-  function renderSubject(subject, classes) {
-      const sujName = subject.name;
+  function renderSubject(subject) {
       return (
         <div key={'key_'+subject.id} className={flexStyle.flexItem} >
           <Link to={`/courses/${subject.id}`} name={subject.name}>
             <Flag cssClass={subject.cssClass}>
               <div className={[flexStyle.flagContent]}>
-                <h2>{subject.name}</h2>
+                <h3>{subject.name}</h3>
               </div>
             </Flag>
           </Link>
@@ -49,8 +49,8 @@ export default function Subjects(){
     ? <p><em>Loading...</em></p>
     : renderSubjects(subjects);
   return (
-    <div>
-      <h1 style={{"textAlign": "center"}}>Направления обучения</h1>
+    <div className={subjectsStyle.subjects}>
+      <h2 style={{"textAlign": "center"}}>Направления обучения</h2>
       {contents}
     </div>
   );

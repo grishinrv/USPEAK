@@ -17,6 +17,11 @@
     align-content: stretch;
 }
 
+@media (orientation: landscape) {
+    .footer{
+    }
+}
+
 .footerItem {
     width: auto;
     height: 10px;
@@ -28,4 +33,18 @@
     justify-content: space-around;
     align-items: stretch;
     align-content: center;
+}
+
+@media (orientation: portrait ) {
+    .footer {
+        bottom: 5vh;
+    }
+}
+
+@media (orientation: portrait ) and (max-width: 1080px) {
+    .footer {
+        bottom: 5vh;
+        padding-right: 1vw;
+        padding-left: 1vw;
+    }
 }
