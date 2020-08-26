@@ -3,3 +3,10 @@
         width: 95vw;
     }
 }
+
+@media (orientation: portrait) {
+    .subjects {
+        height: 80vh;
+    }
+}
+
