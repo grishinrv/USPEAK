@@ -43,12 +43,20 @@
 
 @media (orientation: portrait ) and (max-width: 1080px) {
     .footer {
+        bottom: 2.5vh;
         padding-right: 1vw;
         padding-left: 1vw;
     }
 }
 
 @media (orientation: portrait){
+    .hideForPortrait{
+        display: none;
+    }
+}
+
+
+@media (orientation: landscape ) and (max-width: 800px ) {
     .hideForPortrait{
         display: none;
     }
