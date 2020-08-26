@@ -8,10 +8,10 @@ export  default function  Footer(){
     <div className={[footerStyle.footer, custom.shadowBox].join(" ")}>
       <div className={footerStyle.footerItem}>
         <InstagramIcon/>
-        <p><b>Наш инстаграм:</b> uspeak_podolsk_</p>
+        <p><b className={footerStyle.hideForPortrait}>Наш инстаграм:</b>uspeak_podolsk_</p>
       </div>
-      <div className={footerStyle.footerItem}>
-        <p><b>Адрес:</b> Подольск, ул. Октябрьский проспект д.21б</p>
+      <div className={[footerStyle.footerItem, footerStyle.hideForPortrait].join(" ")}>
+        <p><b >Адрес:</b> Подольск, ул. Октябрьский проспект д.21б</p>
       </div>
       <div className={footerStyle.footerItem}>
         <p><a href="mailto:uspeakstudio@gmail.com"><b>Пишите нам!</b></a></p>
