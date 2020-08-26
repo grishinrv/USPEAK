@@ -57,6 +57,19 @@
      }
 }
 
+@media (orientation: landscape) and (max-width: 1080px) {
+    .flexItem {
+        width: 40vw;
+        height: 25vw;
+    }
+    .flexList {
+        width: 98vw;
+    }
+    .contentScroll{
+        width: 98vw;
+     }
+}
+
 .flexItem:hover{
     border-color: darkred;
     border-width: medium;
@@ -66,7 +79,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     height: 83vh;
-    width: 79vw;
+    width: 78.75vw;
 }
 
 @media (orientation: portrait ) {
@@ -87,7 +100,7 @@
     }
 }
 
-@media (orientation: landscape ) and (max-height: 18000px){
+@media (orientation: landscape ) and (max-height: 800px){
     .contentScroll {
         height: 65vh;
     }

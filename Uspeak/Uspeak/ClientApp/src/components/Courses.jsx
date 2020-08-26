@@ -37,9 +37,11 @@ export default function  Courses (props) {
     ? <p><em>Loading...</em></p>
     : renderCourses(courses)
   return (
-    <div className={flexStyle.contentScroll}>
-      <h2 className={textStyle.textCenter}>{props.name}</h2>
-      {contents}
+    <div>
+      <h2 style={{"textAlign": "center"}}>{props.name}</h2>
+      <div className={flexStyle.contentScroll}>
+        {contents}
+      </div>
     </div>
   );
 }
