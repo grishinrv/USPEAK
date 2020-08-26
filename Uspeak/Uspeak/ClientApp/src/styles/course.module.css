@@ -8,3 +8,9 @@
         width: 88vw;
     }
 }
+
+@media (orientation: landscape ) and (max-width: 1080px){
+    .course {
+        width: 95vw;
+    }
+}

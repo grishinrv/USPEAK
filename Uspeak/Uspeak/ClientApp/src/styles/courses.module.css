@@ -11,8 +11,20 @@
     }
 }
 
+@media (orientation: landscape ) and (max-width: 1080px){
+    .courses {
+        width: 89vw;
+    }
+}
+
 @media (orientation: portrait ) {
     .courses {
         height: 75vh;
+    }
+}
+
+@media (orientation: landscape ) and (max-height: 18000px){
+    .courses {
+        height: 65vh;
     }
 }
