@@ -2,3 +2,15 @@
     width: 63vw;
     text-align: justify;
 }
+
+@media (max-width: 1080px) and (orientation: portrait ) {
+    .course {
+        width: 100vw;
+    }
+}
+
+@media (orientation: landscape ) and (max-width: 1080px){
+    .course {
+        width: 100vw;
+    }
+}

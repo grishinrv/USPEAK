@@ -1,0 +1,12 @@
+@media (orientation: portrait) and (max-width: 1080px) {
+    .subjects {
+        width: 95vw;
+    }
+}
+
+@media (orientation: portrait) {
+    .subjects {
+        height: 75vh;
+    }
+}
+

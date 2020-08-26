@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using NLog;
+﻿using NLog;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Uspeak.Infrastructure
@@ -12,12 +12,15 @@ namespace Uspeak.Infrastructure
     /// </summary>
     public class Logger : NLog.ILogger, Microsoft.Extensions.Logging.ILogger
     {
-        public Logger(IWebHostEnvironment env)
+        public Logger()
         {
-            //var logFolderPath = env.WebRootPath + "\\Logs";
-            //if (!Directory.Exists(logFolderPath))
-            //    Directory.CreateDirectory(logFolderPath);
-            _path =  @"C:\inetpub\wwwroot\Uspeak\Logs\Log.txt";
+            var exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var folderPath = exePath + @"\logs";
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+            _path = folderPath + @"\Log.txt";
+            if (!File.Exists(_path))
+                File.Create(_path);
         }
         private readonly string _path;
         private void Write(string message, string level = "Debug")
