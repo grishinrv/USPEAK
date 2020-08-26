@@ -48,9 +48,11 @@ export default function Subjects(){
     ? <p><em>Loading...</em></p>
     : renderSubjects(subjects);
   return (
-    <div className={flexStyle.contentScroll}>
-      <h2 className={textStyle.textCenter}>Направления обучения</h2>
-      {contents}
+    <div>
+      <h2 style={{"textAlign": "center"}}>Направления обучения</h2>
+      <div className={flexStyle.contentScroll}>
+        {contents}
+      </div>
     </div>
   );
 }

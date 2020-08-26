@@ -44,6 +44,13 @@
     line-height: 10%;
 }
 
+.contentScroll{
+     overflow-y: auto;
+     overflow-x: hidden;
+     height: 83vh;
+     width: 78.75vw;
+ }
+
 @media (orientation: portrait) and (max-width: 1080px) {
     .flexItem {
         width: 100vw;
@@ -57,37 +64,36 @@
      }
 }
 
+@media (orientation: landscape) and (max-width: 1080px) {
+    .flexItem {
+        width: 40vw;
+        height: 25vw;
+    }
+    .flexList {
+        width: 88vw;
+    }
+    .contentScroll{
+        width: 89.5vw;
+     }
+}
+
 .flexItem:hover{
     border-color: darkred;
     border-width: medium;
 }
 
-.contentScroll{
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 83vh;
-    width: 79vw;
-}
+
 
 @media (orientation: portrait ) {
     .contentScroll {
         width: 95vw;
     }
-}
-
-@media (orientation: landscape ) and (max-width: 1080px){
     .contentScroll {
-        width: 95vw;
+        height: 68vh;
     }
 }
 
-@media (orientation: portrait ) {
-    .contentScroll {
-        height: 75vh;
-    }
-}
-
-@media (orientation: landscape ) and (max-height: 18000px){
+@media (orientation: landscape ) and (max-height: 800px){
     .contentScroll {
         height: 65vh;
     }
