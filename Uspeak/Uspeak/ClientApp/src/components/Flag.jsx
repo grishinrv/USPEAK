@@ -1,7 +1,5 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
-import FunctionsSharpIcon from '@material-ui/icons/FunctionsSharp';
-import flexStyle from '../styles/flex.module.css';
 
 const useStyles = createUseStyles({
   stdFlag :{
@@ -17,7 +15,6 @@ const useStyles = createUseStyles({
       width: '100%',
       height: '100%',
       'background-repeat': 'no-repeat'
-
     }
   },
   eng: {

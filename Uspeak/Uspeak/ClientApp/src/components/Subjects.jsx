@@ -3,6 +3,7 @@ import flexStyle from '../styles/flex.module.css';
 import textStyle from '../styles/text.css'; //шрифты заголовков
 import Flag from "./Flag";
 import {Link} from "react-router-dom";
+import ScrollPage from "./ScrollPage";
 
 export default function Subjects(){
   const [subjects, setSubjects] =  useState([]);
@@ -48,11 +49,8 @@ export default function Subjects(){
     ? <p><em>Loading...</em></p>
     : renderSubjects(subjects);
   return (
-    <div>
-      <h2 style={{"textAlign": "center"}}>Направления обучения</h2>
-      <div className={flexStyle.contentScroll}>
-        {contents}
-      </div>
-    </div>
+    <ScrollPage header='Направления обучения'>
+      {contents}
+    </ScrollPage>
   );
 }

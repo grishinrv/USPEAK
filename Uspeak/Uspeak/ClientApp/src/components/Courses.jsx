@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import flexStyle from "../styles/flex.module.css";
 import textStyle from "../styles/text.css";
 import Course from "./Course";
+import ScrollPage from "./ScrollPage";
 
 export default function  Courses (props) {
   const [courses, setCourses] =  useState([]);
@@ -37,11 +38,8 @@ export default function  Courses (props) {
     ? <p><em>Loading...</em></p>
     : renderCourses(courses)
   return (
-    <div>
-      <h2 style={{"textAlign": "center"}}>{props.name}</h2>
-      <div className={flexStyle.contentScroll}>
+    <ScrollPage header={props.name}>
         {contents}
-      </div>
-    </div>
+    </ScrollPage>
   );
 }
