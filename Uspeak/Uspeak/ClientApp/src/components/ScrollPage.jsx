@@ -5,13 +5,14 @@ const useStyles = createUseStyles({
   contentScroll: {
     'overflow-y': 'auto',
     'overflow-x': 'hidden',
-    'height': '83vh',
-    'width': '78.75vw'
+    height: '73vh',
+    width: '78.75vw'
   },
 
   '@media (orientation: landscape) and (max-width: 1080px)':{
     contentScroll: {
-      width: '89.5vw'
+      width: '79.5vw',
+      height: '78.5vh'
     }
   },
   '@media (orientation: landscape ) and (max-height: 800px)':{
