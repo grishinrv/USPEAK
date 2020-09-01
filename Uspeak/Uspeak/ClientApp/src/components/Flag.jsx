@@ -124,6 +124,19 @@ const useStyles = createUseStyles({
                 'radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px',
     'background-color':'slategray',
     'background-size':'75px 100px'
+  },
+  ru: {
+    'background-color':'#ffffff',
+    '&:before': {
+      background: 'linear-gradient(180deg,transparent 34%, #ff0000, 0, #0BB5FF 67%, transparent 0),\n' +
+        'linear-gradient(180deg,transparent 67%, #ffd700, 0, #FF0000 100%, transparent 0)'
+    },
+  },
+  evo: {
+    'background-image': 'radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),\n' +
+                        'radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%)',
+    'background-color': '#C8D3A7',
+    'background-position': '0 0, 0, 0'
   }
 });
 
@@ -136,7 +149,9 @@ export default function Flag(props) {
     'it': [classes.stdFlag, classes.it].join(" "),
     'ch': [classes.stdFlag, classes.ch].join(" "),
     'math': [classes.stdFlag, classes.math].join(" "),
-    'physics': [classes.stdFlag, classes.physics].join(" ")
+    'physics': [classes.stdFlag, classes.physics].join(" "),
+    'ru': [classes.stdFlag, classes.ru].join(" "),
+    'evo': [classes.stdFlag, classes.evo].join(" ")
   }
 
   function getTemplate(subjectCssClass)
