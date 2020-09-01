@@ -33,8 +33,10 @@ namespace Uspeak.Services
         {
             using (var context = _contextFactory.Create())
             {
-                return await context.Tags.Where(x=> x.EntityTags.All(e => e.EntityId == entityId))
-                    .ToListAsync();
+                var tagEntities = await context.EntitiesTags.Where(x => x.EntityId == entityId)
+                            .Include(et => et.Tag)
+                            .ToListAsync();
+                return tagEntities.Select(x => x.Tag).ToList();
             }
         }
     }

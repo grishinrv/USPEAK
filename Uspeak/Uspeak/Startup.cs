@@ -11,6 +11,7 @@ using NLog;
 using System;
 using System.IO;
 using Uspeak.Infrastructure;
+using Uspeak.Infrastructure.Mapping;
 using Uspeak.Infrastructure.Middleware;
 using Uspeak.Persistence;
 using Uspeak.Services;
@@ -47,6 +48,7 @@ namespace Uspeak
             services.AddSingleton<ILogger, Infrastructure.Logger>();
             services.AddDbContext<UspeakDbContext>(); //только для первичного создания БД через Update-Database
 
+            UspeakMapper.Initialize();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

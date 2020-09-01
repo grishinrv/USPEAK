@@ -31,6 +31,7 @@ namespace Uspeak.Persistence
         //DbSet<User> Users { get; }
         DbSet<Entity> Entities { get; }
         DbSet<Tag> Tags { get; }
+        DbSet<EntityTag> EntitiesTags { get; }
         DbSet<Image> Images { get; }
         DbSet<RuntimeConfiguration> RuntimeConfig { get; }
     }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Uspeak.Data.Models;
+using Uspeak.Infrastructure.Mapping;
 using Uspeak.Services;
 
 namespace Uspeak.Controllers
@@ -36,11 +38,19 @@ namespace Uspeak.Controllers
         /// GET: api/Tags/Subjects/id
         /// </summary>
         [HttpGet("ByEntity/{id}")]
-        public async Task<IEnumerable<Tag>> GetByEntity(Guid id)
+        public async Task<IEnumerable<Data.Dto.Tag>> GetByEntity(Guid id)
         {
             //_logger.Trace("Запрос получения списка тэгов по сущности");
-            var result = await _tagRepository.GetTags(id);
-            return result;
+            try
+            {
+                var tags = await _tagRepository.GetTags(id);
+                var result = tags.Select(x => x.Map<Tag, Data.Dto.Tag>()).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }
