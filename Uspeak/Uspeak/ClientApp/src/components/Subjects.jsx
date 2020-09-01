@@ -7,14 +7,26 @@ import ScrollPage from "./ScrollPage";
 
 export default function Subjects(){
   const [subjects, setSubjects] =  useState([]);
-  const [loading, setLoading] =  useState(true);
+  const [subjectsLoading, setSubjectsLoading] =  useState(true);
+  const [aboutUsShortText, setAboutUsShortText] =  useState('');
+  const [aboutUsShortTextLoading, setAboutUsShortTextLoading] =  useState(true);
 
   async function getSubjects() {
     const response = await fetch('api/Tags/Subjects');
     const data = await response.json();
     setSubjects(data);
-    setLoading(false);
+    setSubjectsLoading(false);
   }
+  async function getAboutShortText(courseId) {
+    const response = await fetch(`api/Info/AboutUsShortText`);
+    const data = await response.text();
+    setAboutUsShortText(data);
+    setAboutUsShortTextLoading(false);
+  }
+
+  useEffect(() => {
+    getAboutShortText();
+  });
 
   useEffect(() => {
     getSubjects();
@@ -45,11 +57,16 @@ export default function Subjects(){
     );
   }
 
-  let contents = loading
+  let contents = subjectsLoading
     ? <p><em>Loading...</em></p>
     : renderSubjects(subjects);
+
+  let aboutUsText = aboutUsShortTextLoading
+    ? <p><em>Loading...</em></p>
+    : <p><em>{aboutUsShortText}</em></p>
   return (
     <ScrollPage header='Направления обучения'>
+      {aboutUsText}
       {contents}
     </ScrollPage>
   );
