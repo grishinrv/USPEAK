@@ -43,6 +43,7 @@ namespace Uspeak
             services.AddSingleton<IEntityRepository, EntityRepository>();
             services.AddSingleton<ITagRepository, TagRepository>();
             services.AddSingleton<ICourseRepository, CourseRepository>();
+            services.AddSingleton<IConfigRepository, ConfigRepository>();
             services.AddSingleton<ILogger, Infrastructure.Logger>();
             services.AddDbContext<UspeakDbContext>(); //только для первичного создания БД через Update-Database
 
