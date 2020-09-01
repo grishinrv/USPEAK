@@ -33,6 +33,5 @@ namespace Uspeak.Persistence
         DbSet<Tag> Tags { get; }
         DbSet<EntityTag> EntitiesTags { get; }
         DbSet<Image> Images { get; }
-        DbSet<RuntimeConfiguration> RuntimeConfig { get; }
     }
 }

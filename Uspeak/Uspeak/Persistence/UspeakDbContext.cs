@@ -1068,7 +1068,5 @@ namespace Uspeak.Persistence
         public DbSet<Image> Images { get; set; }
 
         public DbSet<EntityTag> EntitiesTags { get; set; }
-
-        public DbSet<RuntimeConfiguration> RuntimeConfig { get; set; }
     }
 }
