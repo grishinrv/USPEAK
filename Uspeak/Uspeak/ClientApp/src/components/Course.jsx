@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import flexStyle from '../styles/flex.module.css';
+import tagStyle from '../styles/tag.module.css';
 import courseStyle from '../styles/course.module.css';
 import Tag from "./Tag";
 
@@ -26,7 +27,7 @@ export default function Course (props) {
     const items = tags.map(tag =>
       renderTag(tag));
     return (
-      <div className={flexStyle.flexList}>
+      <div className={tagStyle.tagList}>
         {items}
       </div>
     );
