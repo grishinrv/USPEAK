@@ -21,6 +21,7 @@ GRANT SELECT ON "dbo"."Courses" TO [UspeakTech];
 GRANT SELECT ON "dbo"."Entities" TO [UspeakTech];
 GRANT SELECT ON "dbo"."Config" TO [UspeakTech];
 GRANT SELECT ON "dbo"."AnswerOption" TO [UspeakTech];
+GRANT CREATE TABLE TO [UspeakTech];
 
 
 
