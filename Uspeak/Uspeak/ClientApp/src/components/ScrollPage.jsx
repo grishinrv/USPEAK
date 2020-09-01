@@ -1,65 +1,123 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
+import { useMediaQuery } from 'react-responsive';
 
 const useStyles = createUseStyles({
-  contentScroll: {
-    'overflow-y': 'auto',
-    'overflow-x': 'hidden',
-    height: '73vh',
-    width: '78.75vw'
-  },
-
-  '@media (orientation: landscape) and (max-width: 1080px)':{
     contentScroll: {
+      'overflow-y': 'auto',
+      'overflow-x': 'hidden'
+    },
+    defaultHeight: {
+      height: '73vh'
+    },
+    defaultWidth: {
+      width: '78.75vw'
+    },
+    landscapeMaxWidthLow: {
       width: '79.5vw',
-      height: '78.5vh'
-    }
-  },
-  '@media (orientation: landscape ) and (max-height: 800px)':{
-    contentScroll: {
+    },
+    landscapeMaxHeightLow: {
       height: '65vh'
+    },
+    withoutHeaderPortrait: {
+      height: '80vh'
+    },
+    withHeaderPortrait: {
+      height: '72vh'
     }
-  },
-  '@media (orientation: portrait )': {
-    contentScroll: {
-      width: '95vw'
-    }
-  },
-
-  withoutHeader: {
-    '@media (orientation: portrait )': {
-      contentScroll: {
-        height: '80vh'
-      }
-    }
-  },
-  withHeader: {
-    '@media (orientation: portrait )': {
-      contentScroll: {
-        height: '72vh'
-      }
-    }
-  }
-});
+  });
 
 export default function ScrollPage (props) {
   const classes = useStyles();
-  const template = props.header ?
-    <div>
-      <h2 style={{"textAlign": "center"}}>{props.header}</h2>
-      <div className={[classes.contentScroll,
-        '@media (orientation: landscape) and (max-width: 1080px)',
-        '@media (orientation: landscape ) and (max-height: 800px)',
-        '@media (orientation: portrait )',
-        classes.withHeader].join(" ")}>
-        {props.children}
-      </div>
-    </div>
-    :
-    <div>
-      <div className={[classes.contentScroll, classes.withoutHeader].join(" ")}>
-        {props.children}
-      </div>
-    </div>;
+  let template;
+
+  const isLandScape = useMediaQuery({ query: '(orientation: landscape)'});
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)'});
+  const isLowHeight = useMediaQuery({ query: '(max-height: 800px)'});
+  const isLowWidth = useMediaQuery({ query: '(max-width: 1080px)'});
+
+  if (props.header)
+  {
+    if (isPortrait)
+    {
+      template =
+        <div>
+          <h2 style={{"textAlign": "center"}}>{props.header}</h2>
+          <div className={[classes.contentScroll, classes.defaultHeight, classes.withHeaderPortrait].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+    else if(isLandScape && isLowHeight)
+    {
+      template =
+        <div>
+          <h2 style={{"textAlign": "center"}}>{props.header}</h2>
+          <div className={[classes.contentScroll, classes.landscapeMaxHeightLow, classes.defaultWidth].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+    else if(isLandScape && isLowWidth)
+    {
+      template =
+        <div>
+          <h2 style={{"textAlign": "center"}}>{props.header}</h2>
+          <div className={[classes.contentScroll, classes.landscapeMaxWidthLow, classes.defaultHeight].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+    else
+    {
+      template =
+        <div>
+          <h2 style={{"textAlign": "center"}}>{props.header}</h2>
+          <div className={[classes.contentScroll, classes.defaultHeight, classes.defaultWidth].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+  }
+  else
+  {
+    if (isPortrait)
+    {
+      template =
+        <div>
+          <div className={[classes.contentScroll, classes.defaultHeight, classes.withoutHeaderPortrait].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+    else if(isLandScape && isLowHeight)
+    {
+      template =
+        <div>
+          <div className={[classes.contentScroll, classes.landscapeMaxHeightLow, classes.defaultWidth].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+    else if(isLandScape && isLowWidth)
+    {
+      template =
+        <div>
+          <div className={[classes.contentScroll, classes.landscapeMaxWidthLow, classes.defaultHeight].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+    else
+    {
+      template =
+        <div>
+          <div className={[classes.contentScroll, classes.defaultHeight, classes.defaultWidth].join(" ")}>
+            {props.children}
+          </div>
+        </div>
+    }
+  }
+
   return (template);
 }
