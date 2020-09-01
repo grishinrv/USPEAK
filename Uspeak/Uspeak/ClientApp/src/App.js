@@ -6,6 +6,7 @@ import Subjects  from './components/Subjects';
 import { QuestionTemplate } from './components/QuestionTemplate';
 import './custom.css'
 import Courses from "./components/Courses";
+import AboutUs from "./components/AboutUs";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -15,6 +16,7 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/subject-s' component={Subjects} />
+        <Route path='/about-us' component={AboutUs} />
         <Route path='/question-template' component={QuestionTemplate} />
         <Route path='/courses/:subjectId' component={Courses}/>
       </Layout>
