@@ -66,6 +66,9 @@ namespace Uspeak.Persistence
             modelBuilder.Entity<Course>()
                 .HasOne(x => x.PromoImage);
 
+            modelBuilder.Entity<RuntimeConfiguration>()
+                .HasKey(x => x.Key);
+
             //modelBuilder.Entity<User>().
 
             var createdTime = new DateTime(year: 2020, month: 8, day: 6, hour: 8, minute: 0, second: 0);
@@ -367,6 +370,7 @@ namespace Uspeak.Persistence
                     StatusChangedTime = createdTime
                 },
             #endregion
+            #region Развивайка
                 new Entity()
                 {
                     Id = new Guid("0b5c416f-4bd6-43c2-86c7-f37bb9284a01"),
@@ -380,7 +384,44 @@ namespace Uspeak.Persistence
                     CreatedTime = createdTime,
                     Status = EntityStatus.Published,
                     StatusChangedTime = createdTime
+                },
+            #endregion
+            #region Русский язык
+                new Entity()
+                {
+                    Id = new Guid("c56b171c-77fe-41ac-9da9-d2118edd4077"),
+                    Name = "Курс для дошкольников",
+                    Description = @"Курс направлен на развитие знаний по русскому языку.
+                        Занятие ведет опытный педагог, который найдет ключик к любому малышу. 
+                        Занятия могут быть как индивидуальными, так и в мини-группе (до 3 человек).",
+                    EnityKind = EntityType.Course,
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
+                },
+                new Entity()
+                {
+                    Id = new Guid("509c15b7-438c-4927-b586-2747791b2a63"),
+                    Name = "Курс для детей младшей,  средней  и старшей школы",
+                    Description = @"Курс направлен на развитие знаний русского языка, а также на устранение пробелов знаний.",
+                    EnityKind = EntityType.Course,
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
+                },
+                new Entity()
+                {
+                    Id = new Guid("1b9b3807-3560-4f9a-a427-87c9d3a42f9b"),
+                    Name = "Подготовка к ОГЭ и ЕГЭ",
+                    Description = @"Курс направлен на развитие всех аспектов предмета. Особое внимание уделяется 
+                        рассмотрению специфики тестовых заданий , а также методики их выполнения. Также в ходе курса
+                        предусмотрены пробные тестирования с тренировкой заполнения экзаменационных бланков.",
+                    EnityKind = EntityType.Course,
+                    CreatedTime = createdTime,
+                    Status = EntityStatus.Published,
+                    StatusChangedTime = createdTime
                 });
+            #endregion
 
             modelBuilder.Entity<EntityTag>().HasData(
                 new EntityTag()
@@ -592,6 +633,26 @@ namespace Uspeak.Persistence
                 {
                     EntityId = new Guid("a032649c-5f7d-4a64-b13b-468f46764e98"),
                     TagId = new Guid("7c34639f-fa83-4182-b0d1-a117e95f9430")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("0b5c416f-4bd6-43c2-86c7-f37bb9284a01"),
+                    TagId = new Guid("900c8402-e705-489d-a651-3336e37086b2")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("c56b171c-77fe-41ac-9da9-d2118edd4077"),
+                    TagId = new Guid("1ae1711c-c8c0-4692-b82f-a317f2ce6ecd")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("509c15b7-438c-4927-b586-2747791b2a63"),
+                    TagId = new Guid("1ae1711c-c8c0-4692-b82f-a317f2ce6ecd")
+                },
+                new EntityTag()
+                {
+                    EntityId = new Guid("1b9b3807-3560-4f9a-a427-87c9d3a42f9b"),
+                    TagId = new Guid("1ae1711c-c8c0-4692-b82f-a317f2ce6ecd")
                 });
 
             modelBuilder.Entity<Course>().HasData(
@@ -823,6 +884,7 @@ namespace Uspeak.Persistence
                     CssClassesString = "physics exam"
                 },
             #endregion
+            #region Развивайка
                 new Course()
                 {
                     Id = new Guid("0b5c416f-4bd6-43c2-86c7-f37bb9284a01"),
@@ -832,8 +894,36 @@ namespace Uspeak.Persistence
                         огромной популярностью как среди родителей, так и педагогов дошкольных учреждений. 
                         Обучение с помощью кубиков  обеспечивает наглядность и системность подачи материала. 
                         Занятия проходят в игровой форме.",
-                    CssClassesString = "children"
+                    CssClassesString = "evo children"
+                },
+            #endregion
+            #region Русский язык
+                new Course()
+                {
+                    Id = new Guid("c56b171c-77fe-41ac-9da9-d2118edd4077"),
+                    Name = "Курс для дошкольников",
+                    Description = @"Курс направлен на развитие знаний по русскому языку.
+                            Занятие ведет опытный педагог, который найдет ключик к любому малышу. 
+                            Занятия могут быть как индивидуальными, так и в мини-группе (до 3 человек).",
+                    CssClassesString = "ru children"
+                },
+                new Course()
+                {
+                    Id = new Guid("509c15b7-438c-4927-b586-2747791b2a63"),
+                    Name = "Курс для детей младшей,  средней  и старшей школы",
+                    Description = @"Курс направлен на развитие знаний русского языка, а также на устранение пробелов знаний.",
+                    CssClassesString = "ru teenages"
+                },
+                new Course()
+                {
+                    Id = new Guid("1b9b3807-3560-4f9a-a427-87c9d3a42f9b"),
+                    Name = "Подготовка к ОГЭ и ЕГЭ",
+                    Description = @"Курс направлен на развитие всех аспектов предмета. Особое внимание уделяется 
+                        рассмотрению специфики тестовых заданий , а также методики их выполнения. Также в ходе курса
+                        предусмотрены пробные тестирования с тренировкой заполнения экзаменационных бланков.",
+                    CssClassesString = "ru exam"
                 });
+            #endregion
 
             modelBuilder.Entity<Tag>().HasData(
                 new Tag()
@@ -912,8 +1002,39 @@ namespace Uspeak.Persistence
                     Name = "детей средней и старшей школы",
                     TagKind = TagType.TargetAaudience,
                     CssClass = "teenagers"
+                },
+                new Tag()
+                {
+                    Id = new Guid("900c8402-e705-489d-a651-3336e37086b2"),
+                    Name = "Развивайка",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "evo"
+                },
+                new Tag()
+                {
+                    Id = new Guid("1ae1711c-c8c0-4692-b82f-a317f2ce6ecd"),
+                    Name = "Русский язык",
+                    TagKind = TagType.StudySubject,
+                    CssClass = "ru"
                 }
             );
+
+            modelBuilder.Entity<RuntimeConfiguration>()
+                .HasData(
+                    new RuntimeConfiguration()
+                    { 
+                        Key = "about_us_full_text",
+                        Value = @"Привет! Мы рады видеть Вас! Наша студия – это небольшое, но очень уютное пространство, 
+где найдется место каждому! Мы делаем все, чтобы приходя к нам за знаниями, 
+Вы получали их на высоком уровне, при этом также росли культурно и находили новых друзей. 
+Знания – это ключ к понимаю мира, который может подарить Вам множество возможностей. Добро пожаловать!"
+                    },
+                    new RuntimeConfiguration()
+                    {
+                        Key = "about_us_short_text",
+                        Value = "Знания – ключ к пониманию мира, дарящий нам множество возможностей."
+                    }
+                );
         }
 
         public DbSet<Course> Courses { get; set; }
@@ -947,5 +1068,7 @@ namespace Uspeak.Persistence
         public DbSet<Image> Images { get; set; }
 
         public DbSet<EntityTag> EntitiesTags { get; set; }
+
+        public DbSet<RuntimeConfiguration> RuntimeConfig { get; set; }
     }
 }
