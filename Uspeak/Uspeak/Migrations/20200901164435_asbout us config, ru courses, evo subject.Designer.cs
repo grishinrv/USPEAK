@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Uspeak.Persistence;
 
 namespace Uspeak.Migrations
 {
     [DbContext(typeof(UspeakDbContext))]
-    partial class UspeakDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200901164435_asbout us config, ru courses, evo subject")]
+    partial class asboutusconfigrucoursesevosubject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
