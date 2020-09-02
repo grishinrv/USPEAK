@@ -44,7 +44,8 @@ namespace Uspeak.Controllers
             try
             {
                 var tags = await _tagRepository.GetTags(id);
-                var result = tags.Select(x => x.Map<Tag, Data.Dto.Tag>()).ToList();
+                var result = tags.Select(x => x.Map<Tag, Data.Dto.Tag>())
+                    .OrderBy(x => x.Name).ToList();
                 return result;
             }
             catch (Exception ex)
