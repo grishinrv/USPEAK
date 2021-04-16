@@ -1,0 +1,16 @@
+.tag {
+    border-radius: 5px;
+    border-width: thin;
+    border-style: double;
+    border-color: black;
+    padding: 2px;
+    background-color: lightblue;
+    display: inline-block;
+    margin: 1px !important;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

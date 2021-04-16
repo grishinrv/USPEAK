@@ -1,0 +1,75 @@
+.flexList {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 75vw;
+    height: auto;
+}
+
+.flexItem {
+    margin: 1px;
+    border-color: #4e555b;
+    border-style: ridge;
+    border-width: thin;
+    width: 20vw;
+    height: 10vw;
+}
+
+.flexItemDefaultWidth {
+     margin-top: 2vh;
+     margin-bottom: 2vh;
+     height: auto;
+ }
+
+.flagContent {
+    position: absolute;
+    height: 90%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 10%;
+}
+
+.flagContentWithIcon{
+    position: absolute;
+    height: 90%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: stretch;
+    line-height: 10%;
+}
+
+
+
+@media (orientation: portrait) and (max-width: 1080px) {
+    .flexItem {
+        width: 100vw;
+        height: 38vw;
+    }
+    .flexList {
+        width: 92vw;
+    }
+    .flagContent {
+         height: 100%;
+     }
+}
+
+@media (orientation: landscape) and (max-width: 1080px) {
+    .flexItem {
+        width: 40vw;
+        height: 25vw;
+    }
+    .flexList {
+        width: 88vw;
+    }
+}
+
+.flexItem:hover{
+    border-color: darkred;
+    border-width: medium;
+}
